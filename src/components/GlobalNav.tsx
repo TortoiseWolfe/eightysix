@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { LayeredeightysixLogo } from '@/components/atomic/SpinningLogo';
+import { LayeredEightySixLogo } from '@/components/atomic/SpinningLogo';
 import { AnimatedLogo } from '@/components/atomic/AnimatedLogo';
 import { ColorblindToggle } from '@/components/molecular/ColorblindToggle';
 import { FontSizeControl } from '@/components/navigation/FontSizeControl';
@@ -176,7 +176,7 @@ export function GlobalNav() {
               className="flex items-center gap-2 transition-opacity hover:opacity-80"
             >
               <div className="h-8 w-8">
-                <LayeredeightysixLogo
+                <LayeredEightySixLogo
                   size={32}
                   speed="slow"
                   className="drop-shadow-sm"

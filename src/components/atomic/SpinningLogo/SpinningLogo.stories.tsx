@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import { SpinningLogo } from './SpinningLogo';
-import { eightysixLogo } from './eightysixLogo';
-import { LayeredeightysixLogo } from './LayeredeightysixLogo';
+import { EightySixLogo } from './EightySixLogo';
+import { LayeredEightySixLogo } from './LayeredEightySixLogo';
 
 const meta = {
   title: 'Components/Atomic/SpinningLogo',
@@ -48,14 +48,14 @@ export const Default: Story = {
     children: null,
   },
   render: () => (
-    <LayeredeightysixLogo size={250} speed="slow" pauseOnHover={true} />
+    <LayeredEightySixLogo size={250} speed="slow" pauseOnHover={true} />
   ),
 };
 
 // Original simple eightysix Logo
 export const Simpleeightysix: Story = {
   args: {
-    children: <eightysixLogo />,
+    children: <EightySixLogo />,
     size: 250,
     pauseOnHover: true,
   },
@@ -67,7 +67,7 @@ export const Layeredeightysix: Story = {
     children: null,
   },
   render: () => (
-    <LayeredeightysixLogo size={250} speed="slow" pauseOnHover={true} />
+    <LayeredEightySixLogo size={250} speed="slow" pauseOnHover={true} />
   ),
 };
 
@@ -76,13 +76,13 @@ export const LayeredeightysixLarge: Story = {
     children: null,
   },
   render: () => (
-    <LayeredeightysixLogo size={350} speed="slow" pauseOnHover={true} />
+    <LayeredEightySixLogo size={350} speed="slow" pauseOnHover={true} />
   ),
 };
 
 export const eightysixLarge: Story = {
   args: {
-    children: <eightysixLogo />,
+    children: <EightySixLogo />,
     size: 350,
     pauseOnHover: true,
   },
@@ -90,7 +90,7 @@ export const eightysixLarge: Story = {
 
 export const eightysixFast: Story = {
   args: {
-    children: <eightysixLogo />,
+    children: <EightySixLogo />,
     size: 250,
     speed: 'fast',
     pauseOnHover: true,
@@ -99,7 +99,7 @@ export const eightysixFast: Story = {
 
 export const eightysixVerySlow: Story = {
   args: {
-    children: <eightysixLogo />,
+    children: <EightySixLogo />,
     size: 250,
     speed: 60, // 60 second rotation - ultra smooth
     pauseOnHover: true,
@@ -108,7 +108,7 @@ export const eightysixVerySlow: Story = {
 
 export const eightysixStatic: Story = {
   args: {
-    children: <eightysixLogo />,
+    children: <EightySixLogo />,
     size: 250,
     isSpinning: false,
   },
@@ -116,7 +116,7 @@ export const eightysixStatic: Story = {
 
 export const eightysixCounterClockwise: Story = {
   args: {
-    children: <eightysixLogo />,
+    children: <EightySixLogo />,
     size: 250,
     direction: 'counter-clockwise',
     pauseOnHover: true,
@@ -241,23 +241,23 @@ export const ThemeShowcase: Story = {
           eightysix logo — adapts to current theme via text-primary
         </p>
         <div className="flex items-center gap-8">
-          <LayeredeightysixLogo size={150} speed="slow" pauseOnHover />
-          <LayeredeightysixLogo size={100} speed="slow" pauseOnHover />
+          <LayeredEightySixLogo size={150} speed="slow" pauseOnHover />
+          <LayeredEightySixLogo size={100} speed="slow" pauseOnHover />
         </div>
       </div>
       <div className="flex flex-col gap-3">
         <p className="text-base-content/80 text-sm">On surfaces</p>
         <div className="bg-base-100 flex items-center gap-6 rounded-lg p-4">
           <span className="text-base-content/80 text-sm">base-100:</span>
-          <LayeredeightysixLogo size={80} speed="slow" pauseOnHover />
+          <LayeredEightySixLogo size={80} speed="slow" pauseOnHover />
         </div>
         <div className="bg-base-200 flex items-center gap-6 rounded-lg p-4">
           <span className="text-base-content/80 text-sm">base-200:</span>
-          <LayeredeightysixLogo size={80} speed="slow" pauseOnHover />
+          <LayeredEightySixLogo size={80} speed="slow" pauseOnHover />
         </div>
         <div className="bg-neutral flex items-center gap-6 rounded-lg p-4">
           <span className="text-neutral-content/80 text-sm">neutral:</span>
-          <LayeredeightysixLogo size={80} speed="slow" pauseOnHover />
+          <LayeredEightySixLogo size={80} speed="slow" pauseOnHover />
         </div>
       </div>
     </div>

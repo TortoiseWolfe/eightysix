@@ -5,14 +5,14 @@ import Image from 'next/image';
 import { SpinningLogo } from './SpinningLogo';
 import { detectedConfig } from '@/config/project-detected';
 
-export interface LayeredeightysixLogoProps {
+export interface LayeredEightySixLogoProps {
   className?: string;
   size?: number;
   speed?: 'slow' | 'normal' | 'fast' | number;
   pauseOnHover?: boolean;
 }
 
-export const LayeredeightysixLogo: React.FC<LayeredeightysixLogoProps> = ({
+export const LayeredEightySixLogo: React.FC<LayeredEightySixLogoProps> = ({
   className = '',
   speed = 'slow',
   pauseOnHover = true,
@@ -102,4 +102,4 @@ export const LayeredeightysixLogo: React.FC<LayeredeightysixLogoProps> = ({
   );
 };
 
-LayeredeightysixLogo.displayName = 'LayeredeightysixLogo';
+LayeredEightySixLogo.displayName = 'LayeredEightySixLogo';

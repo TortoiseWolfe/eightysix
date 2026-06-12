@@ -1,13 +1,13 @@
 import React from 'react';
 import Image from 'next/image';
 
-export interface eightysixLogoProps {
+export interface EightySixLogoProps {
   className?: string;
   width?: number;
   height?: number;
 }
 
-export const eightysixLogo: React.FC<eightysixLogoProps> = ({
+export const EightySixLogo: React.FC<EightySixLogoProps> = ({
   className = 'w-full h-full',
   width = 400,
   height = 400,
@@ -25,4 +25,4 @@ export const eightysixLogo: React.FC<eightysixLogoProps> = ({
   );
 };
 
-eightysixLogo.displayName = 'eightysixLogo';
+EightySixLogo.displayName = 'EightySixLogo';

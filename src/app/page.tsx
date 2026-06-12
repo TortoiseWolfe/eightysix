@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { LayeredeightysixLogo } from '@/components/atomic/SpinningLogo';
+import { LayeredEightySixLogo } from '@/components/atomic/SpinningLogo';
 import { AnimatedLogo } from '@/components/atomic/AnimatedLogo';
 import TemplateStats, {
   type TemplateStat,
@@ -115,7 +115,7 @@ export default function Home() {
           {/* Logo — responsive sizing, spins slowly, pauses on hover */}
           <div className="flex-shrink-0">
             <div className="h-48 w-48 sm:h-52 sm:w-52 md:h-56 md:w-56 lg:h-[350px] lg:w-[350px]">
-              <LayeredeightysixLogo speed="slow" pauseOnHover />
+              <LayeredEightySixLogo speed="slow" pauseOnHover />
             </div>
           </div>
 
