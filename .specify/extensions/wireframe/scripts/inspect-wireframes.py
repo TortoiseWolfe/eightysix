@@ -54,7 +54,7 @@ EXPECTED = {
         'y': 1060,
         'bold': True,
         'anchor': None,  # x=40 = left-aligned, no text-anchor
-        'format': r'^[0-9]{3}:[0-9]{2} \| .+ \| ScriptHammer$',  # NNN:NN | Feature Name | ScriptHammer
+        'format': r'^[0-9]{3}:[0-9]{2} \| .+ \| (ScriptHammer|eightysix)$',  # NNN:NN | Feature Name | eightysix
     },
     'desktop_mockup': {'x': 40, 'y': 60, 'width': 1280, 'height': 720},
     'mobile_mockup': {'x': 1360, 'y': 60, 'width': 360, 'height': 720},
@@ -468,7 +468,7 @@ def check_patterns(structures: List[SVGStructure]) -> List[PatternViolation]:
                     violations.append(PatternViolation(
                         svg_path=structure.path,
                         check='signature_format',
-                        expected='NNN:NN | Feature Name | ScriptHammer',
+                        expected='NNN:NN | Feature Name | eightysix',
                         actual=f'"{actual_text}"'
                     ))
         else:

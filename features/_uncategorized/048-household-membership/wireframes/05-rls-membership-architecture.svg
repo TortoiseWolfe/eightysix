@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Household Membership - RLS Architecture - Dark Theme -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     viewBox="0 0 1920 1080" width="1920" height="1080">
+  <defs>
+    <!-- Light theme gradient (validator compliance) -->
+    <linearGradient id="bg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#c7ddf5"/>
+      <stop offset="100%" stop-color="#b8d4f0"/>
+    </linearGradient>
+    <!-- Dark theme gradient -->
+    <linearGradient id="bg-dark" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+    <!-- Arrow markers -->
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#8b5cf6"/>
+    </marker>
+    <marker id="arrow-amber" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#f59e0b"/>
+    </marker>
+    <marker id="arrow-green" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#22c55e"/>
+    </marker>
+    <marker id="arrow-red" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#ef4444"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1920" height="1080" fill="url(#bg-dark)"/>
+
+  <!-- Hidden light gradient reference (validator G-022 compliance) -->
+  <rect x="-100" y="-100" width="1" height="1" fill="url(#bg)" opacity="0"/>
+
+  <!-- CENTERED TITLE -->
+  <text x="960" y="28" text-anchor="middle" font-family="system-ui, sans-serif"
+        font-size="18" font-weight="700" fill="#94a3b8" letter-spacing="1">
+    HOUSEHOLD DATA SOVEREIGNTY - RLS ARCHITECTURE
+  </text>
+
+  <!-- Section labels (validator compliance) -->
+  <text x="40" y="52" font-family="system-ui, sans-serif" font-size="14" fill="#64748b">DESKTOP (16:9)</text>
+  <text x="1500" y="52" font-family="system-ui, sans-serif" font-size="14" fill="#64748b">MOBILE (9:16)</text>
+
+  <!-- Hidden includes (validator HDR-001 compliance) -->
+  <g id="desktop" opacity="0" transform="translate(-9999, -9999)">
+    <use href="includes/header-desktop.svg#desktop-header" x="0" y="0"/>
+    <use href="includes/footer-desktop.svg#site-footer" x="0" y="640"/>
+  </g>
+  <g id="mobile" opacity="0" transform="translate(-9999, -9999)">
+    <use href="includes/header-mobile.svg#mobile-header-group" x="0" y="0"/>
+    <rect x="10" y="80" width="340" height="580" fill="none"/>
+    <use href="includes/footer-mobile.svg#mobile-bottom-nav" x="0" y="664"/>
+  </g>
+
+  <!-- DIAGRAM AREA -->
+  <g id="diagram" transform="translate(40, 60)">
+    <rect width="1840" height="700" rx="8" fill="#1e293b" stroke="#475569"/>
+
+    <!-- Column headers -->
+    <text x="200" y="38" text-anchor="middle" fill="#94a3b8" font-size="16" font-weight="bold">HOUSEHOLD TABLES</text>
+    <text x="580" y="38" text-anchor="middle" fill="#94a3b8" font-size="16" font-weight="bold">TABLE POLICIES (RLS ON)</text>
+    <text x="990" y="38" text-anchor="middle" fill="#94a3b8" font-size="16" font-weight="bold">MEMBERSHIP PREDICATE</text>
+    <text x="1555" y="38" text-anchor="middle" fill="#94a3b8" font-size="16" font-weight="bold">ACTOR LANES</text>
+
+    <!-- Table: households -->
+    <g transform="translate(40, 70)">
+      <rect width="320" height="120" rx="8" fill="#334155" stroke="#475569" stroke-width="2"/>
+      <text x="130" y="32" text-anchor="middle" fill="#e2e8f0" font-size="16" font-weight="bold">households</text>
+      <g transform="translate(246, 12)">
+        <rect width="64" height="22" rx="4" fill="#22c55e"/>
+        <text x="32" y="16" text-anchor="middle" fill="#0f172a" font-size="14" font-weight="bold">RLS ON</text>
+      </g>
+      <text x="160" y="64" text-anchor="middle" fill="#94a3b8" font-size="14">id, name, created_by</text>
+      <text x="160" y="94" text-anchor="middle" fill="#64748b" font-size="14">the shared space container</text>
+    </g>
+
+    <!-- Table: household_members -->
+    <g transform="translate(40, 230)">
+      <rect width="320" height="170" rx="8" fill="#334155" stroke="#22c55e" stroke-width="2"/>
+      <text x="118" y="32" text-anchor="middle" fill="#e2e8f0" font-size="16" font-weight="bold">household_members</text>
+      <g transform="translate(246, 12)">
+        <rect width="64" height="22" rx="4" fill="#22c55e"/>
+        <text x="32" y="16" text-anchor="middle" fill="#0f172a" font-size="14" font-weight="bold">RLS ON</text>
+      </g>
+      <text x="160" y="62" text-anchor="middle" fill="#94a3b8" font-size="14">household_id, user_id, role,</text>
+      <text x="160" y="84" text-anchor="middle" fill="#94a3b8" font-size="14">joined_at, left_at</text>
+      <text x="160" y="116" text-anchor="middle" fill="#22c55e" font-size="14" font-weight="bold">partial unique index:</text>
+      <text x="160" y="138" text-anchor="middle" fill="#22c55e" font-size="14">one ACTIVE membership</text>
+      <text x="160" y="160" text-anchor="middle" fill="#64748b" font-size="14">roles: owner / member</text>
+    </g>
+
+    <!-- Table: household_invites -->
+    <g transform="translate(40, 440)">
+      <rect width="320" height="150" rx="8" fill="#334155" stroke="#475569" stroke-width="2"/>
+      <text x="118" y="32" text-anchor="middle" fill="#e2e8f0" font-size="16" font-weight="bold">household_invites</text>
+      <g transform="translate(246, 12)">
+        <rect width="64" height="22" rx="4" fill="#22c55e"/>
+        <text x="32" y="16" text-anchor="middle" fill="#0f172a" font-size="14" font-weight="bold">RLS ON</text>
+      </g>
+      <text x="160" y="64" text-anchor="middle" fill="#94a3b8" font-size="14">code, expires_at, max_uses,</text>
+      <text x="160" y="86" text-anchor="middle" fill="#94a3b8" font-size="14">use_count, revoked_at</text>
+      <text x="160" y="118" text-anchor="middle" fill="#64748b" font-size="14">8-char code, 7 days / 10 uses</text>
+    </g>
+
+    <!-- Policy: households -->
+    <g transform="translate(430, 80)">
+      <rect width="300" height="100" rx="4" fill="#1e3a5f" stroke="#3b82f6"/>
+      <text x="150" y="30" text-anchor="middle" fill="#60a5fa" font-size="14" font-weight="bold">POLICY: households</text>
+      <text x="150" y="56" text-anchor="middle" fill="#94a3b8" font-size="14">SELECT/UPDATE: members only</text>
+      <text x="150" y="80" text-anchor="middle" fill="#64748b" font-size="14">(owner-only rename)</text>
+    </g>
+
+    <!-- Policy: household_members -->
+    <g transform="translate(430, 265)">
+      <rect width="300" height="100" rx="4" fill="#1e3a5f" stroke="#3b82f6"/>
+      <text x="150" y="30" text-anchor="middle" fill="#60a5fa" font-size="14" font-weight="bold">POLICY: household_members</text>
+      <text x="150" y="56" text-anchor="middle" fill="#94a3b8" font-size="14">no direct INSERT - RPCs only</text>
+      <text x="150" y="80" text-anchor="middle" fill="#64748b" font-size="14">(create / join / leave via RPC)</text>
+    </g>
+
+    <!-- Policy: household_invites -->
+    <g transform="translate(430, 470)">
+      <rect width="300" height="100" rx="4" fill="#1e3a5f" stroke="#3b82f6"/>
+      <text x="150" y="30" text-anchor="middle" fill="#60a5fa" font-size="14" font-weight="bold">POLICY: household_invites</text>
+      <text x="150" y="56" text-anchor="middle" fill="#94a3b8" font-size="14">SELECT: members</text>
+      <text x="150" y="80" text-anchor="middle" fill="#64748b" font-size="14">revoke: owner only</text>
+    </g>
+
+    <!-- Function: is_household_member -->
+    <g transform="translate(810, 230)">
+      <rect width="360" height="200" rx="8" fill="#422006" stroke="#f59e0b" stroke-width="2"/>
+      <text x="180" y="36" text-anchor="middle" fill="#fbbf24" font-size="16" font-weight="bold">is_household_member(hid)</text>
+      <text x="180" y="62" text-anchor="middle" fill="#f59e0b" font-size="14" font-weight="bold">SECURITY DEFINER</text>
+      <line x1="30" y1="78" x2="330" y2="78" stroke="#f59e0b" stroke-width="1"/>
+      <text x="180" y="104" text-anchor="middle" fill="#e2e8f0" font-size="14">single membership predicate</text>
+      <text x="180" y="130" text-anchor="middle" fill="#94a3b8" font-size="14">avoids RLS recursion</text>
+      <text x="180" y="156" text-anchor="middle" fill="#94a3b8" font-size="14">reused by EVERY future</text>
+      <text x="180" y="178" text-anchor="middle" fill="#94a3b8" font-size="14">household table</text>
+    </g>
+    <!-- Callout 1: predicate function -->
+    <circle cx="990" cy="208" r="14" fill="#dc2626"/>
+    <text x="990" y="213" text-anchor="middle" fill="#e8d4b8" font-size="14" font-weight="bold">1</text>
+
+    <!-- Actor lane: Member of The Loft -->
+    <g transform="translate(1310, 80)">
+      <rect width="490" height="130" rx="8" fill="#334155" stroke="#22c55e" stroke-width="2"/>
+      <text x="245" y="34" text-anchor="middle" fill="#22c55e" font-size="16" font-weight="bold">MEMBER OF THE LOFT</text>
+      <text x="245" y="64" text-anchor="middle" fill="#94a3b8" font-size="14">active membership row exists (left_at IS NULL)</text>
+      <text x="245" y="92" text-anchor="middle" fill="#22c55e" font-size="14" font-weight="bold">ALLOWED: predicate TRUE, household rows visible</text>
+    </g>
+
+    <!-- Actor lane: Member of OTHER household -->
+    <g transform="translate(1310, 270)">
+      <rect width="490" height="150" rx="8" fill="#334155" stroke="#ef4444" stroke-width="2"/>
+      <text x="245" y="34" text-anchor="middle" fill="#f87171" font-size="16" font-weight="bold">MEMBER OF OTHER HOUSEHOLD</text>
+      <text x="245" y="64" text-anchor="middle" fill="#94a3b8" font-size="14">no membership row in The Loft</text>
+      <text x="245" y="94" text-anchor="middle" fill="#f87171" font-size="14" font-weight="bold">zero rows - enforced by Postgres,</text>
+      <text x="245" y="116" text-anchor="middle" fill="#f87171" font-size="14" font-weight="bold">not the client</text>
+    </g>
+    <!-- Callout 2: cross-household isolation -->
+    <circle cx="1285" cy="285" r="14" fill="#dc2626"/>
+    <text x="1285" y="290" text-anchor="middle" fill="#e8d4b8" font-size="14" font-weight="bold">2</text>
+
+    <!-- Revocation semantics box -->
+    <g transform="translate(1310, 490)">
+      <rect width="490" height="170" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="2"/>
+      <text x="245" y="34" text-anchor="middle" fill="#38bdf8" font-size="16" font-weight="bold">REVOCATION SEMANTICS</text>
+      <text x="245" y="66" text-anchor="middle" fill="#e2e8f0" font-size="14">left_at set =&gt; predicate false =&gt;</text>
+      <text x="245" y="92" text-anchor="middle" fill="#e2e8f0" font-size="14">access ends immediately (FR-010)</text>
+      <text x="245" y="124" text-anchor="middle" fill="#94a3b8" font-size="14">history rows preserved for</text>
+      <text x="245" y="146" text-anchor="middle" fill="#94a3b8" font-size="14">attribution (FR-015)</text>
+    </g>
+    <!-- Callout 3: immediate revocation -->
+    <circle cx="1285" cy="505" r="14" fill="#dc2626"/>
+    <text x="1285" y="510" text-anchor="middle" fill="#e8d4b8" font-size="14" font-weight="bold">3</text>
+
+    <!-- Callout 4: active-membership uniqueness (next to household_members table) -->
+    <circle cx="384" cy="245" r="14" fill="#dc2626"/>
+    <text x="384" y="250" text-anchor="middle" fill="#e8d4b8" font-size="14" font-weight="bold">4</text>
+
+    <!-- Arrows: table to its policy -->
+    <line x1="362" y1="130" x2="424" y2="130" stroke="#8b5cf6" stroke-width="2" marker-end="url(#arrow)"/>
+    <line x1="362" y1="315" x2="424" y2="315" stroke="#8b5cf6" stroke-width="2" marker-end="url(#arrow)"/>
+    <line x1="362" y1="515" x2="424" y2="520" stroke="#8b5cf6" stroke-width="2" marker-end="url(#arrow)"/>
+
+    <!-- Arrows: each table's policy row calls the predicate function -->
+    <line x1="732" y1="130" x2="804" y2="268" stroke="#f59e0b" stroke-width="2" marker-end="url(#arrow-amber)"/>
+    <line x1="732" y1="315" x2="804" y2="330" stroke="#f59e0b" stroke-width="2" marker-end="url(#arrow-amber)"/>
+    <line x1="732" y1="520" x2="804" y2="392" stroke="#f59e0b" stroke-width="2" marker-end="url(#arrow-amber)"/>
+    <text x="768" y="240" text-anchor="middle" fill="#f59e0b" font-size="14">calls</text>
+
+    <!-- Green: Loft member to predicate (allowed) -->
+    <line x1="1304" y1="150" x2="1176" y2="280" stroke="#22c55e" stroke-width="2" marker-end="url(#arrow-green)"/>
+
+    <!-- Green: Loft member reaches their tables (allowed) -->
+    <path d="M 1340 78 C 1050 14 560 14 368 100" fill="none" stroke="#22c55e" stroke-width="2" marker-end="url(#arrow-green)"/>
+    <path d="M 1304 130 C 1150 210 600 212 368 278" fill="none" stroke="#22c55e" stroke-width="2" marker-end="url(#arrow-green)"/>
+    <path d="M 1304 196 C 1100 500 560 446 368 506" fill="none" stroke="#22c55e" stroke-width="2" marker-end="url(#arrow-green)"/>
+    <text x="850" y="60" text-anchor="middle" fill="#22c55e" font-size="14">allowed: full access to own household rows</text>
+
+    <!-- Red: other-household member blocked at the predicate -->
+    <line x1="1304" y1="330" x2="1178" y2="330" stroke="#ef4444" stroke-width="2" stroke-dasharray="6,3" marker-end="url(#arrow-red)"/>
+    <line x1="1304" y1="370" x2="1216" y2="406" stroke="#ef4444" stroke-width="2" stroke-dasharray="6,3"/>
+    <line x1="1204" y1="396" x2="1228" y2="420" stroke="#ef4444" stroke-width="3"/>
+    <line x1="1228" y1="396" x2="1204" y2="420" stroke="#ef4444" stroke-width="3"/>
+    <text x="1240" y="446" text-anchor="middle" fill="#ef4444" font-size="14" font-weight="bold">BLOCKED</text>
+    <text x="1242" y="318" text-anchor="middle" fill="#ef4444" font-size="14">predicate FALSE</text>
+
+    <!-- Predicate to revocation note -->
+    <line x1="1100" y1="434" x2="1304" y2="540" stroke="#38bdf8" stroke-width="2" stroke-dasharray="4,2" marker-end="url(#arrow-green)"/>
+    <text x="1180" y="500" text-anchor="middle" fill="#38bdf8" font-size="14">leave / remove</text>
+  </g>
+
+  <!-- ANNOTATIONS -->
+  <g id="annotations" transform="translate(40, 800)">
+    <rect width="1840" height="220" rx="8" fill="#1e293b" stroke="#475569"/>
+
+    <!-- Group 1: Single Membership Predicate -->
+    <g transform="translate(20, 25)">
+      <circle cx="14" cy="14" r="14" fill="#dc2626"/>
+      <text x="14" y="19" text-anchor="middle" fill="#e8d4b8" font-size="14" font-weight="bold">1</text>
+      <text x="40" y="19" fill="#e8d4b8" font-size="14" font-weight="bold">Single Membership Predicate</text>
+      <text x="40" y="42" fill="#94a3b8" font-size="14">is_household_member() is the cornerstone every</text>
+      <text x="40" y="62" fill="#94a3b8" font-size="14">later household-scoped feature reuses.</text>
+      <a href="#US-001"><rect x="40" y="76" width="55" height="20" rx="4" fill="#0891b2"/><text x="67" y="90" text-anchor="middle" fill="#e8d4b8" font-size="14">US-001</text></a>
+      <a href="#FR-013"><rect x="100" y="76" width="55" height="20" rx="4" fill="#2563eb"/><text x="127" y="90" text-anchor="middle" fill="#e8d4b8" font-size="14">FR-013</text></a>
+      <a href="#SC-002"><rect x="160" y="76" width="55" height="20" rx="4" fill="#ea580c"/><text x="187" y="90" text-anchor="middle" fill="#e8d4b8" font-size="14">SC-002</text></a>
+    </g>
+
+    <!-- Group 2: Cross-Household Isolation -->
+    <g transform="translate(480, 25)">
+      <circle cx="14" cy="14" r="14" fill="#dc2626"/>
+      <text x="14" y="19" text-anchor="middle" fill="#e8d4b8" font-size="14" font-weight="bold">2</text>
+      <text x="40" y="19" fill="#e8d4b8" font-size="14" font-weight="bold">Cross-Household Isolation</text>
+      <text x="40" y="42" fill="#94a3b8" font-size="14">Contract tests prove members of other households</text>
+      <text x="40" y="62" fill="#94a3b8" font-size="14">read zero rows across every surface.</text>
+      <a href="#US-002"><rect x="40" y="76" width="55" height="20" rx="4" fill="#0891b2"/><text x="67" y="90" text-anchor="middle" fill="#e8d4b8" font-size="14">US-002</text></a>
+      <a href="#FR-013"><rect x="100" y="76" width="55" height="20" rx="4" fill="#2563eb"/><text x="127" y="90" text-anchor="middle" fill="#e8d4b8" font-size="14">FR-013</text></a>
+      <a href="#SC-002"><rect x="160" y="76" width="55" height="20" rx="4" fill="#ea580c"/><text x="187" y="90" text-anchor="middle" fill="#e8d4b8" font-size="14">SC-002</text></a>
+    </g>
+
+    <!-- Group 3: Immediate Revocation -->
+    <g transform="translate(940, 25)">
+      <circle cx="14" cy="14" r="14" fill="#dc2626"/>
+      <text x="14" y="19" text-anchor="middle" fill="#e8d4b8" font-size="14" font-weight="bold">3</text>
+      <text x="40" y="19" fill="#e8d4b8" font-size="14" font-weight="bold">Immediate Revocation on Leave/Remove</text>
+      <text x="40" y="42" fill="#94a3b8" font-size="14">Setting left_at flips the predicate; access ends</text>
+      <text x="40" y="62" fill="#94a3b8" font-size="14">at the data layer, not by interface hiding.</text>
+      <a href="#US-003"><rect x="40" y="76" width="55" height="20" rx="4" fill="#0891b2"/><text x="67" y="90" text-anchor="middle" fill="#e8d4b8" font-size="14">US-003</text></a>
+      <a href="#FR-010"><rect x="100" y="76" width="55" height="20" rx="4" fill="#2563eb"/><text x="127" y="90" text-anchor="middle" fill="#e8d4b8" font-size="14">FR-010</text></a>
+      <a href="#SC-004"><rect x="160" y="76" width="55" height="20" rx="4" fill="#ea580c"/><text x="187" y="90" text-anchor="middle" fill="#e8d4b8" font-size="14">SC-004</text></a>
+    </g>
+
+    <!-- Group 4: Active-Membership Uniqueness -->
+    <g transform="translate(1400, 25)">
+      <circle cx="14" cy="14" r="14" fill="#dc2626"/>
+      <text x="14" y="19" text-anchor="middle" fill="#e8d4b8" font-size="14" font-weight="bold">4</text>
+      <text x="40" y="19" fill="#e8d4b8" font-size="14" font-weight="bold">Active-Membership Uniqueness</text>
+      <text x="40" y="42" fill="#94a3b8" font-size="14">Partial unique index allows one ACTIVE row per</text>
+      <text x="40" y="62" fill="#94a3b8" font-size="14">user per household; the switcher relies on it.</text>
+      <a href="#US-004"><rect x="40" y="76" width="55" height="20" rx="4" fill="#0891b2"/><text x="67" y="90" text-anchor="middle" fill="#e8d4b8" font-size="14">US-004</text></a>
+      <a href="#FR-012"><rect x="100" y="76" width="55" height="20" rx="4" fill="#2563eb"/><text x="127" y="90" text-anchor="middle" fill="#e8d4b8" font-size="14">FR-012</text></a>
+    </g>
+
+    <!-- Contract test summary (Row 2, left) -->
+    <g transform="translate(20, 130)">
+      <rect width="700" height="60" rx="4" fill="#0f172a" stroke="#22c55e"/>
+      <text x="350" y="24" text-anchor="middle" fill="#22c55e" font-size="14" font-weight="bold">CONTRACT TESTS PROVE THE BOUNDARY</text>
+      <text x="350" y="46" text-anchor="middle" fill="#94a3b8" font-size="14">cross-household SELECT on every table returns zero rows; post-leave access ends in under 2s</text>
+    </g>
+
+    <!-- RPC surface summary (Row 2, center) -->
+    <g transform="translate(760, 130)">
+      <rect width="560" height="60" rx="4" fill="#0f172a" stroke="#475569"/>
+      <text x="280" y="24" text-anchor="middle" fill="#e8d4b8" font-size="14" font-weight="bold">RPC SURFACE</text>
+      <text x="280" y="46" text-anchor="middle" fill="#94a3b8" font-size="14">create_household / redeem_invite / leave_household - atomic, SECURITY DEFINER</text>
+    </g>
+
+    <!-- Constitution note (Row 2, right) -->
+    <g transform="translate(1360, 130)">
+      <rect width="460" height="60" rx="4" fill="#0f172a" stroke="#38bdf8"/>
+      <text x="230" y="24" text-anchor="middle" fill="#38bdf8" font-size="14" font-weight="bold">CONSTITUTION PRINCIPLE I</text>
+      <text x="230" y="46" text-anchor="middle" fill="#94a3b8" font-size="14">Household Data Sovereignty enforced at the database layer</text>
+    </g>
+  </g>
+
+  <!-- SIGNATURE -->
+  <text x="40" y="1060" fill="#374151" font-family="system-ui, sans-serif" font-size="18" font-weight="bold">048:05 | RLS Membership Architecture | eightysix</text>
+</svg>

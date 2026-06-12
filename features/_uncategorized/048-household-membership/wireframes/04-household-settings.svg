@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#c7ddf5"/>
+      <stop offset="100%" stop-color="#b8d4f0"/>
+    </linearGradient>
+  </defs>
+  <rect width="1920" height="1080" fill="url(#bg)"/>
+  <text x="960" y="28" text-anchor="middle" font-family="system-ui, sans-serif" font-size="18" font-weight="700" fill="#4b5563" letter-spacing="1">HOUSEHOLD SETTINGS - MEMBERS AND SWITCHER</text>
+  <text x="40" y="52" fill="#8b5cf6" font-family="system-ui, sans-serif" font-size="18" font-weight="bold">DESKTOP (16:9)</text>
+  <text x="1500" y="52" fill="#d946ef" font-family="system-ui, sans-serif" font-size="15" font-weight="bold">MOBILE</text>
+
+  <g id="desktop" transform="translate(40, 60)">
+    <rect width="1280" height="720" rx="8" fill="#e8d4b8" stroke="#b8a080"/>
+    <use href="includes/header-desktop.svg#desktop-header" x="0" y="0"/>
+    <rect x="660" y="3" width="80" height="44" rx="4" fill="#8b5cf6"/>
+    <text x="700" y="31" text-anchor="middle" fill="#e8d4b8" font-family="system-ui, sans-serif" font-size="14" font-weight="600">Account</text>
+
+    <!-- Page heading -->
+    <text x="60" y="106" font-family="system-ui, sans-serif" font-size="26" font-weight="bold" fill="#1f2937">Household Settings</text>
+
+    <!-- Household switcher pill (active household) -->
+    <rect x="880" y="70" width="240" height="44" rx="22" fill="#f5f0e6" stroke="#b8a080"/>
+    <text x="904" y="98" font-family="system-ui, sans-serif" font-size="16" font-weight="600" fill="#1f2937">The Loft (4)</text>
+    <polygon points="1080,88 1096,88 1088,100" fill="#374151"/>
+
+    <!-- Members card -->
+    <rect x="60" y="130" width="800" height="306" rx="8" fill="#dcc8a8" stroke="#b8a080"/>
+    <text x="80" y="164" font-family="system-ui, sans-serif" font-size="16" font-weight="bold" fill="#1f2937">Members (4 of 20)</text>
+
+    <!-- Row 1: Alex (Owner) -->
+    <circle cx="104" cy="210" r="16" fill="#8b5cf6"/>
+    <text x="104" y="215" text-anchor="middle" fill="#fff" font-family="system-ui, sans-serif" font-size="14" font-weight="600">A</text>
+    <text x="136" y="206" font-family="system-ui, sans-serif" font-size="16" font-weight="600" fill="#1f2937">Alex</text>
+    <text x="136" y="226" font-family="system-ui, sans-serif" font-size="14" fill="#4b5563">joined Apr 2026</text>
+    <rect x="200" y="194" width="62" height="24" rx="12" fill="#8b5cf6"/>
+    <text x="231" y="211" text-anchor="middle" fill="#e8d4b8" font-family="system-ui, sans-serif" font-size="14" font-weight="600">Owner</text>
+    <line x1="80" y1="240" x2="840" y2="240" stroke="#b8a080"/>
+
+    <!-- Row 2: Sam -->
+    <circle cx="104" cy="270" r="16" fill="#0891b2"/>
+    <text x="104" y="275" text-anchor="middle" fill="#fff" font-family="system-ui, sans-serif" font-size="14" font-weight="600">S</text>
+    <text x="136" y="266" font-family="system-ui, sans-serif" font-size="16" font-weight="600" fill="#1f2937">Sam</text>
+    <text x="136" y="286" font-family="system-ui, sans-serif" font-size="14" fill="#4b5563">joined Apr 2026</text>
+    <text x="600" y="275" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#8b5cf6" text-decoration="underline">Make owner</text>
+    <text x="740" y="275" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#dc2626" text-decoration="underline">Remove</text>
+    <line x1="80" y1="300" x2="840" y2="300" stroke="#b8a080"/>
+
+    <!-- Row 3: Riley -->
+    <circle cx="104" cy="330" r="16" fill="#ea580c"/>
+    <text x="104" y="335" text-anchor="middle" fill="#fff" font-family="system-ui, sans-serif" font-size="14" font-weight="600">R</text>
+    <text x="136" y="326" font-family="system-ui, sans-serif" font-size="16" font-weight="600" fill="#1f2937">Riley</text>
+    <text x="136" y="346" font-family="system-ui, sans-serif" font-size="14" fill="#4b5563">joined May 2026</text>
+    <text x="740" y="335" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#dc2626" text-decoration="underline">Remove</text>
+    <line x1="80" y1="360" x2="840" y2="360" stroke="#b8a080"/>
+
+    <!-- Row 4: Jordan -->
+    <circle cx="104" cy="390" r="16" fill="#16a34a"/>
+    <text x="104" y="395" text-anchor="middle" fill="#fff" font-family="system-ui, sans-serif" font-size="14" font-weight="600">J</text>
+    <text x="136" y="386" font-family="system-ui, sans-serif" font-size="16" font-weight="600" fill="#1f2937">Jordan</text>
+    <text x="136" y="406" font-family="system-ui, sans-serif" font-size="14" fill="#4b5563">joined May 2026</text>
+    <text x="740" y="395" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#dc2626" text-decoration="underline">Remove</text>
+
+    <!-- Capacity card -->
+    <rect x="880" y="330" width="320" height="110" rx="8" fill="#dcc8a8" stroke="#b8a080"/>
+    <text x="900" y="358" font-family="system-ui, sans-serif" font-size="16" font-weight="bold" fill="#1f2937">Capacity</text>
+    <rect x="900" y="372" width="280" height="14" rx="7" fill="#f5f0e6" stroke="#b8a080"/>
+    <rect x="900" y="372" width="56" height="14" rx="7" fill="#8b5cf6"/>
+    <text x="900" y="414" font-family="system-ui, sans-serif" font-size="14" fill="#4b5563">4 of 20 members - 16 spots open</text>
+
+    <!-- Rename household -->
+    <text x="60" y="474" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#1f2937">Rename household</text>
+    <rect x="60" y="484" width="400" height="44" rx="4" fill="#f5f0e6" stroke="#b8a080"/>
+    <text x="76" y="512" font-family="system-ui, sans-serif" font-size="14" fill="#1f2937">The Loft</text>
+    <rect x="476" y="484" width="100" height="44" rx="6" fill="#8b5cf6"/>
+    <text x="526" y="512" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#e8d4b8">Save</text>
+
+    <!-- Divider + danger zone -->
+    <line x1="60" y1="552" x2="820" y2="552" stroke="#b8a080"/>
+    <rect x="60" y="566" width="760" height="64" rx="8" fill="#dcc8a8" stroke="#dc2626"/>
+    <rect x="80" y="576" width="180" height="44" rx="6" fill="#f5f0e6" stroke="#dc2626"/>
+    <text x="170" y="604" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#dc2626">Leave household</text>
+    <text x="290" y="604" font-family="system-ui, sans-serif" font-size="14" fill="#4b5563">Owners must transfer ownership first</text>
+
+    <!-- Switcher dropdown (open, overlapping panel with shadow) -->
+    <rect x="846" y="136" width="300" height="148" rx="8" fill="#000000" opacity="0.15"/>
+    <rect x="840" y="130" width="300" height="148" rx="8" fill="#f5f0e6" stroke="#b8a080"/>
+    <rect x="846" y="136" width="288" height="40" rx="4" fill="#dcc8a8"/>
+    <text x="860" y="162" font-family="system-ui, sans-serif" font-size="16" font-weight="bold" fill="#16a34a">&#10003;</text>
+    <text x="884" y="162" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#1f2937">The Loft<tspan fill="#4b5563" font-weight="400"> - active</tspan></text>
+    <line x1="846" y1="180" x2="1134" y2="180" stroke="#b8a080"/>
+    <text x="884" y="206" font-family="system-ui, sans-serif" font-size="14" fill="#1f2937">Lake House</text>
+    <line x1="846" y1="224" x2="1134" y2="224" stroke="#b8a080"/>
+    <text x="884" y="250" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#8b5cf6">+ Create or join</text>
+
+    <use href="includes/footer-desktop.svg#site-footer" x="0" y="640"/>
+
+    <g class="callout"><circle cx="340" cy="158" r="14" fill="#dc2626"/><text x="340" y="163" text-anchor="middle" fill="#fff" font-size="14" font-weight="bold">1</text></g>
+    <g class="callout"><circle cx="810" cy="268" r="14" fill="#dc2626"/><text x="810" y="273" text-anchor="middle" fill="#fff" font-size="14" font-weight="bold">2</text></g>
+    <g class="callout"><circle cx="640" cy="588" r="14" fill="#dc2626"/><text x="640" y="593" text-anchor="middle" fill="#fff" font-size="14" font-weight="bold">3</text></g>
+    <g class="callout"><circle cx="1150" cy="92" r="14" fill="#dc2626"/><text x="1150" y="97" text-anchor="middle" fill="#fff" font-size="14" font-weight="bold">4</text></g>
+    <g class="callout"><circle cx="1230" cy="385" r="14" fill="#dc2626"/><text x="1230" y="390" text-anchor="middle" fill="#fff" font-size="14" font-weight="bold">5</text></g>
+  </g>
+
+  <g id="mobile" transform="translate(1360, 60)">
+    <rect width="360" height="720" rx="24" fill="#e8d4b8" stroke="#b8a080"/>
+    <use href="includes/header-mobile.svg#mobile-header-group" x="0" y="0"/>
+
+    <!-- Switcher pill -->
+    <rect x="16" y="110" width="200" height="44" rx="22" fill="#f5f0e6" stroke="#b8a080"/>
+    <text x="36" y="138" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#1f2937">The Loft (4)</text>
+    <polygon points="178,126 192,126 185,137" fill="#374151"/>
+
+    <!-- Members card -->
+    <rect x="16" y="170" width="328" height="270" rx="8" fill="#dcc8a8" stroke="#b8a080"/>
+    <text x="32" y="196" font-family="system-ui, sans-serif" font-size="14" font-weight="bold" fill="#1f2937">Members (4 of 20)</text>
+
+    <circle cx="44" cy="237" r="14" fill="#8b5cf6"/>
+    <text x="44" y="242" text-anchor="middle" fill="#fff" font-family="system-ui, sans-serif" font-size="14" font-weight="600">A</text>
+    <text x="68" y="235" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#1f2937">Alex</text>
+    <text x="68" y="253" font-family="system-ui, sans-serif" font-size="14" fill="#4b5563">joined Apr 2026</text>
+    <rect x="112" y="221" width="62" height="24" rx="12" fill="#8b5cf6"/>
+    <text x="143" y="238" text-anchor="middle" fill="#e8d4b8" font-family="system-ui, sans-serif" font-size="14" font-weight="600">Owner</text>
+    <line x1="32" y1="264" x2="328" y2="264" stroke="#b8a080"/>
+
+    <circle cx="44" cy="291" r="14" fill="#0891b2"/>
+    <text x="44" y="296" text-anchor="middle" fill="#fff" font-family="system-ui, sans-serif" font-size="14" font-weight="600">S</text>
+    <text x="68" y="289" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#1f2937">Sam</text>
+    <text x="68" y="307" font-family="system-ui, sans-serif" font-size="14" fill="#4b5563">joined Apr 2026</text>
+    <text x="270" y="295" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#dc2626" text-decoration="underline">Remove</text>
+    <line x1="32" y1="318" x2="328" y2="318" stroke="#b8a080"/>
+
+    <circle cx="44" cy="345" r="14" fill="#ea580c"/>
+    <text x="44" y="350" text-anchor="middle" fill="#fff" font-family="system-ui, sans-serif" font-size="14" font-weight="600">R</text>
+    <text x="68" y="343" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#1f2937">Riley</text>
+    <text x="68" y="361" font-family="system-ui, sans-serif" font-size="14" fill="#4b5563">joined May 2026</text>
+    <text x="270" y="349" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#dc2626" text-decoration="underline">Remove</text>
+    <line x1="32" y1="372" x2="328" y2="372" stroke="#b8a080"/>
+
+    <circle cx="44" cy="399" r="14" fill="#16a34a"/>
+    <text x="44" y="404" text-anchor="middle" fill="#fff" font-family="system-ui, sans-serif" font-size="14" font-weight="600">J</text>
+    <text x="68" y="397" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#1f2937">Jordan</text>
+    <text x="68" y="415" font-family="system-ui, sans-serif" font-size="14" fill="#4b5563">joined May 2026</text>
+    <text x="270" y="403" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#dc2626" text-decoration="underline">Remove</text>
+
+    <!-- Rename -->
+    <text x="16" y="464" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#1f2937">Rename household</text>
+    <rect x="16" y="474" width="240" height="44" rx="4" fill="#f5f0e6" stroke="#b8a080"/>
+    <text x="30" y="502" font-family="system-ui, sans-serif" font-size="14" fill="#1f2937">The Loft</text>
+    <rect x="264" y="474" width="80" height="44" rx="6" fill="#8b5cf6"/>
+    <text x="304" y="502" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#e8d4b8">Save</text>
+
+    <!-- Leave household -->
+    <rect x="16" y="542" width="200" height="44" rx="6" fill="#f5f0e6" stroke="#dc2626"/>
+    <text x="116" y="570" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#dc2626">Leave household</text>
+    <text x="16" y="612" font-family="system-ui, sans-serif" font-size="14" fill="#4b5563">Owners must transfer ownership first</text>
+
+    <use href="includes/footer-mobile.svg#mobile-bottom-nav" x="0" y="664"/>
+
+    <g class="callout"><circle cx="240" cy="132" r="11" fill="#dc2626"/><text x="240" y="137" text-anchor="middle" fill="#fff" font-size="14" font-weight="bold">4</text></g>
+    <g class="callout"><circle cx="310" cy="192" r="11" fill="#dc2626"/><text x="310" y="197" text-anchor="middle" fill="#fff" font-size="14" font-weight="bold">1</text></g>
+    <g class="callout"><circle cx="240" cy="564" r="11" fill="#dc2626"/><text x="240" y="569" text-anchor="middle" fill="#fff" font-size="14" font-weight="bold">3</text></g>
+  </g>
+
+  <g id="annotations" transform="translate(40, 800)">
+    <rect width="1840" height="220" rx="8" fill="#dcc8a8" stroke="#b8a080"/>
+    <g transform="translate(20, 16)">
+      <circle cx="14" cy="14" r="12" fill="#dc2626"/>
+      <text x="14" y="19" text-anchor="middle" fill="#fff" font-size="14" font-weight="bold">1</text>
+      <text x="38" y="19" font-family="system-ui, sans-serif" font-size="14" font-weight="700" fill="#1f2937">Member list with roles</text>
+      <text x="38" y="44" font-family="system-ui, sans-serif" font-size="14" fill="#374151">Every member sees the roster: names,</text>
+      <text x="38" y="62" font-family="system-ui, sans-serif" font-size="14" fill="#374151">roles, and join dates.</text>
+      <a href="#US-003" transform="translate(38, 74)"><rect width="56" height="22" rx="11" fill="#0891b2"/><text x="28" y="16" text-anchor="middle" fill="#f5f0e6" font-size="14" font-weight="700">US-003</text></a>
+      <a href="#FR-008" transform="translate(100, 74)"><rect width="56" height="22" rx="11" fill="#2563eb"/><text x="28" y="16" text-anchor="middle" fill="#f5f0e6" font-size="14" font-weight="700">FR-008</text></a>
+      <a href="#SC-004" transform="translate(162, 74)"><rect width="56" height="22" rx="11" fill="#ea580c"/><text x="28" y="16" text-anchor="middle" fill="#f5f0e6" font-size="14" font-weight="700">SC-004</text></a>
+    </g>
+    <g transform="translate(388, 16)">
+      <circle cx="14" cy="14" r="12" fill="#dc2626"/>
+      <text x="14" y="19" text-anchor="middle" fill="#fff" font-size="14" font-weight="bold">2</text>
+      <text x="38" y="19" font-family="system-ui, sans-serif" font-size="14" font-weight="700" fill="#1f2937">Owner actions</text>
+      <text x="38" y="44" font-family="system-ui, sans-serif" font-size="14" fill="#374151">Owners remove members or transfer</text>
+      <text x="38" y="62" font-family="system-ui, sans-serif" font-size="14" fill="#374151">ownership; removal ends access at once.</text>
+      <a href="#US-003" transform="translate(38, 74)"><rect width="56" height="22" rx="11" fill="#0891b2"/><text x="28" y="16" text-anchor="middle" fill="#f5f0e6" font-size="14" font-weight="700">US-003</text></a>
+      <a href="#FR-008" transform="translate(100, 74)"><rect width="56" height="22" rx="11" fill="#2563eb"/><text x="28" y="16" text-anchor="middle" fill="#f5f0e6" font-size="14" font-weight="700">FR-008</text></a>
+      <a href="#FR-010" transform="translate(162, 74)"><rect width="56" height="22" rx="11" fill="#2563eb"/><text x="28" y="16" text-anchor="middle" fill="#f5f0e6" font-size="14" font-weight="700">FR-010</text></a>
+    </g>
+    <g transform="translate(756, 16)">
+      <circle cx="14" cy="14" r="12" fill="#dc2626"/>
+      <text x="14" y="19" text-anchor="middle" fill="#fff" font-size="14" font-weight="bold">3</text>
+      <text x="38" y="19" font-family="system-ui, sans-serif" font-size="14" font-weight="700" fill="#1f2937">Leave and sole-owner guard</text>
+      <text x="38" y="44" font-family="system-ui, sans-serif" font-size="14" fill="#374151">Members leave anytime; a sole owner</text>
+      <text x="38" y="62" font-family="system-ui, sans-serif" font-size="14" fill="#374151">must transfer ownership before leaving.</text>
+      <a href="#US-003" transform="translate(38, 74)"><rect width="56" height="22" rx="11" fill="#0891b2"/><text x="28" y="16" text-anchor="middle" fill="#f5f0e6" font-size="14" font-weight="700">US-003</text></a>
+      <a href="#FR-009" transform="translate(100, 74)"><rect width="56" height="22" rx="11" fill="#2563eb"/><text x="28" y="16" text-anchor="middle" fill="#f5f0e6" font-size="14" font-weight="700">FR-009</text></a>
+    </g>
+    <g transform="translate(1124, 16)">
+      <circle cx="14" cy="14" r="12" fill="#dc2626"/>
+      <text x="14" y="19" text-anchor="middle" fill="#fff" font-size="14" font-weight="bold">4</text>
+      <text x="38" y="19" font-family="system-ui, sans-serif" font-size="14" font-weight="700" fill="#1f2937">Household switcher</text>
+      <text x="38" y="44" font-family="system-ui, sans-serif" font-size="14" fill="#374151">Both households listed, active marked;</text>
+      <text x="38" y="62" font-family="system-ui, sans-serif" font-size="14" fill="#374151">every scoped view follows the switch.</text>
+      <a href="#US-004" transform="translate(38, 74)"><rect width="56" height="22" rx="11" fill="#0891b2"/><text x="28" y="16" text-anchor="middle" fill="#f5f0e6" font-size="14" font-weight="700">US-004</text></a>
+      <a href="#FR-011" transform="translate(100, 74)"><rect width="56" height="22" rx="11" fill="#2563eb"/><text x="28" y="16" text-anchor="middle" fill="#f5f0e6" font-size="14" font-weight="700">FR-011</text></a>
+    </g>
+    <g transform="translate(1492, 16)">
+      <circle cx="14" cy="14" r="12" fill="#dc2626"/>
+      <text x="14" y="19" text-anchor="middle" fill="#fff" font-size="14" font-weight="bold">5</text>
+      <text x="38" y="19" font-family="system-ui, sans-serif" font-size="14" font-weight="700" fill="#1f2937">Capacity meter (4 of 20)</text>
+      <text x="38" y="44" font-family="system-ui, sans-serif" font-size="14" fill="#374151">The 20-member cap surfaces here; full</text>
+      <text x="38" y="62" font-family="system-ui, sans-serif" font-size="14" fill="#374151">households reject further joins.</text>
+      <a href="#US-002" transform="translate(38, 74)"><rect width="56" height="22" rx="11" fill="#0891b2"/><text x="28" y="16" text-anchor="middle" fill="#f5f0e6" font-size="14" font-weight="700">US-002</text></a>
+      <a href="#US-003" transform="translate(100, 74)"><rect width="56" height="22" rx="11" fill="#0891b2"/><text x="28" y="16" text-anchor="middle" fill="#f5f0e6" font-size="14" font-weight="700">US-003</text></a>
+      <a href="#FR-017" transform="translate(162, 74)"><rect width="56" height="22" rx="11" fill="#2563eb"/><text x="28" y="16" text-anchor="middle" fill="#f5f0e6" font-size="14" font-weight="700">FR-017</text></a>
+    </g>
+  </g>
+  <text x="40" y="1060" fill="#374151" font-family="system-ui, sans-serif" font-size="18" font-weight="bold">048:04 | Household Settings | eightysix</text>
+</svg>
