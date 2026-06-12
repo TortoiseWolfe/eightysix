@@ -897,12 +897,12 @@ class WireframeValidator:
         if text_match:
             sig_text = text_match.group(2).strip()
             # Must match format: NNN:NN | Feature Name | ScriptHammer
-            valid_format = re.match(r'^\d{3}:\d{2}\s*\|\s*.+\s*\|\s*ScriptHammer$', sig_text)
+            valid_format = re.match(r'^\d{3}:\d{2}\s*\|\s*.+\s*\|\s*(ScriptHammer|eightysix)$', sig_text)
             if not valid_format:
                 self.issues.append(Issue(
                     severity="ERROR",
                     code="SIGNATURE-004",
-                    message=f"Signature format wrong: '{sig_text[:40]}...' - must be 'NNN:NN | Feature Name | ScriptHammer'"
+                    message=f"Signature format wrong: '{sig_text[:40]}...' - must be 'NNN:NN | Feature Name | eightysix'"
                 ))
 
     def _check_annotation_spacing(self):
