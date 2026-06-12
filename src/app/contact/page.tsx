@@ -2,13 +2,13 @@ import type { Metadata } from 'next';
 import { ContactForm } from '@/components/forms/ContactForm';
 
 export const metadata: Metadata = {
-  title: 'Contact Us | ScriptHammer',
+  title: 'Contact Us | eightysix',
   description:
-    "Get in touch with the ScriptHammer team. We'd love to hear from you!",
-  keywords: ['contact', 'support', 'help', 'feedback', 'ScriptHammer'],
+    "Get in touch with the eightysix team. We'd love to hear from you!",
+  keywords: ['contact', 'support', 'help', 'feedback', 'eightysix'],
   openGraph: {
-    title: 'Contact Us | ScriptHammer',
-    description: 'Get in touch with the ScriptHammer team',
+    title: 'Contact Us | eightysix',
+    description: 'Get in touch with the eightysix team',
     type: 'website',
   },
 };
@@ -110,7 +110,7 @@ export default function ContactPage() {
               </h3>
               <div className="space-y-2">
                 <a
-                  href="https://github.com/TortoiseWolfe/ScriptHammer/issues"
+                  href="https://github.com/TortoiseWolfe/eightysix/issues"
                   className="link link-primary flex items-center"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -125,7 +125,7 @@ export default function ContactPage() {
                   GitHub Issues
                 </a>
                 <a
-                  href="https://github.com/TortoiseWolfe/ScriptHammer/discussions"
+                  href="https://github.com/TortoiseWolfe/eightysix/discussions"
                   className="link link-primary flex items-center"
                   target="_blank"
                   rel="noopener noreferrer"

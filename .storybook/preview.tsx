@@ -66,8 +66,8 @@ const preview: Preview = {
     // Theme decorator (outermost — sets data-theme on parent element)
     withThemeByDataAttribute({
       themes: {
-        'scripthammer-dark': 'scripthammer-dark',
-        'scripthammer-light': 'scripthammer-light',
+        'eightysix-dark': 'eightysix-dark',
+        'eightysix-light': 'eightysix-light',
         light: 'light',
         dark: 'dark',
         cupcake: 'cupcake',
@@ -101,7 +101,7 @@ const preview: Preview = {
         nord: 'nord',
         sunset: 'sunset',
       },
-      defaultTheme: 'scripthammer-dark',
+      defaultTheme: 'eightysix-dark',
       attributeName: 'data-theme',
     }),
   ],

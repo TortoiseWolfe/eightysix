@@ -1,4 +1,4 @@
-# ScriptHammer Constitution
+# eightysix Constitution
 
 ## Core Principles
 

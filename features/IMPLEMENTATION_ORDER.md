@@ -1,9 +1,57 @@
-# ScriptHammer Feature Implementation Order
+# eightysix Feature Implementation Order
 
 **Generated**: 2025-12-30
-**Last Updated**: 2026-04-26
-**Total Features**: 47
+**Last Updated**: 2026-06-12
+**Total Features**: 47 inherited (template) + 7 net-new (86 product)
 **All Issues Fixed**: 23/23 (P0, P1, P2, P3 resolved in feature files)
+
+---
+
+## 86 Product Features (the actual roadmap)
+
+The 47 inherited features below this section are the ScriptHammer template's
+tree — treat completed ones as **Tier 0 (inherited)**: auth (003), RLS
+baseline (000), consent banner (019), PWA, offline-queue lib, component
+template (006). The 86 product roadmap is these seven features:
+
+### 86 Tier 1: Household Foundation
+
+| Order | Feature | Name                   | PRP                                         | Why First                                                                 |
+| ----- | ------- | ---------------------- | ------------------------------------------- | ------------------------------------------------------------------------- |
+| 1     | **048** | Household & Membership | `docs/prp-docs/household-membership-prp.md` | Everything is household-scoped; RLS cornerstone (`is_household_member()`) |
+
+### 86 Tier 2: Core Product + Consent
+
+| Order | Feature | Name                  | PRP                                    | Depends On                                                                                                                  |
+| ----- | ------- | --------------------- | -------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
+| 2     | **049** | The 86 List & Capture | `docs/prp-docs/eighty-six-list-prp.md` | 048                                                                                                                         |
+| 3     | **050** | Consent & Privacy     | (PRP TBD)                              | 048 — consent UX, consent_records, export/delete Edge Functions; only blocks stock_events writes, can run parallel with 049 |
+
+### 86 Tier 3: Capture Modes + Offline
+
+| Order | Feature | Name                  | Depends On                                                                                                                 |
+| ----- | ------- | --------------------- | -------------------------------------------------------------------------------------------------------------------------- |
+| 4     | **051** | Offline Capture Queue | 049 — StockQueue adapter on BaseOfflineQueue; ship before 052/053 so they queue from day one                               |
+| 5     | **052** | Barcode Capture       | 049, 051 — @zxing/browser + Open Food Facts + product_cache                                                                |
+| 6     | **053** | AI Photo Capture      | 049, 051 — recognize-item Edge Function (Claude vision, `RECOGNITION_MODEL` default `claude-opus-4-8`); independent of 052 |
+
+### 86 Tier 4: Insights
+
+| Order | Feature | Name                | Depends On                                                                                             |
+| ----- | ------- | ------------------- | ------------------------------------------------------------------------------------------------------ |
+| 7     | **054** | Household Analytics | 049, 050 — consent-aware dashboard; k-anonymized cross-household rollup per Constitution Principle III |
+
+```mermaid
+graph TD
+    T0[Tier 0: inherited auth/RLS/PWA] --> F048[048-Household-Membership]
+    F048 --> F049[049-EightySix-List]
+    F048 --> F050[050-Consent-Privacy]
+    F049 --> F051[051-Offline-Queue]
+    F051 --> F052[052-Barcode]
+    F051 --> F053[053-AI-Photo]
+    F049 --> F054[054-Analytics]
+    F050 --> F054
+```
 
 ---
 

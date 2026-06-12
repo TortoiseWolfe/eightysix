@@ -60,7 +60,7 @@
 
 ## Implementation Base
 
-This project uses [ScriptHammer.com](https://scripthammer.com) as the implementation template.
+This project uses [eightysix.com](https://eightysix.com) as the implementation template.
 
 ---
 

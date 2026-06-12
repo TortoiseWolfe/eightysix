@@ -116,7 +116,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Links
 
-- [GitHub Repository](https://github.com/TortoiseWolfe/ScriptHammer)
-- [Live Demo](https://www.scripthammer.com/)
-- [Storybook](https://www.scripthammer.com/storybook/)
-- [Status Dashboard](https://www.scripthammer.com/status)
+- [GitHub Repository](https://github.com/TortoiseWolfe/eightysix)
+- [Live Demo](https://www.eightysix.com/)
+- [Storybook](https://www.eightysix.com/storybook/)
+- [Status Dashboard](https://www.eightysix.com/status)

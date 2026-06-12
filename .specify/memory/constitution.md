@@ -1,284 +1,272 @@
 <!--
-Sync Impact Report - v1.0.2 Amendment (Wireframe Gate Hardening)
-Review Date: 2026-05-06
-Version: 1.0.1 → 1.0.2 (MINOR amendment — Principle III hardening)
-Reviewed For: Issue #73 — promote wireframe step to a hard gate
+Sync Impact Report - v1.0.0 Ratification (Privacy-First Reframe)
+Ratification Date: 2026-06-12
+Version: (forked from ScriptHammer template, post-047 feature tree) → 1.0.0 (FRESH RATIFICATION)
+Project: eightysix ("86") — household out-of-stock tracker
 
-Amendment Summary:
-  Principle III ("PRP Methodology") was previously silent on the wireframe
-  step, treating wireframe authoring as an optional hook absorbed into the
-  Developer/UIDesigner roles. The 2026-05-02 strategy session (operator
-  decision; see ~/.claude/plans/trying-to-decide-on-gleaming-kitten.md)
-  promoted wireframes to a hard gate between /speckit.clarify and
-  /speckit.plan for all web/RN/KDG/Drupal tracks. Unity remains exempt
-  (game scenes are mocked in-Editor, not via SVG).
+Rationale for fresh v1.0.0 rather than v1.x.x amendment:
+  This is a template generation from TortoiseWolfe/ScriptHammer followed by a
+  wholesale principle reframe. The new constitution puts privacy-first data
+  ethics in the top slots (I–V) and absorbs ScriptHammer's six original
+  disciplines (component pattern, TDD, PRP/SpecKit + wireframe gate, Docker,
+  progressive enhancement, privacy/GDPR) into a "Mandatory Constraints"
+  section beneath them — the structural pattern established by SpokeToWork
+  v1.0.0 and HatCoatAndBoots v1.0.0. This is a fresh constitution for a new
+  project, not an amendment of the upstream's; semantic versioning starts at
+  1.0.0 here.
 
-  This amendment bakes that decision into the constitution as the
-  source-of-truth so the rest of the GrimGlow IP family (RN ScriptHammer,
-  KDG-stack, Headless Drupal templates) inherits the hardened gate when
-  each track's v1.0.0 ratifies.
+Why privacy-first for a fridge app:
+  86's long-term ambition is aggregate analysis of out-of-stock/restock
+  events — market-research-grade data about what households consume.
+  A product whose business model touches behavioral data must make its
+  data ethics structural, not procedural. The principles below are the
+  product moat: households trust the list because the architecture makes
+  betrayal impossible, not because a policy page promises restraint.
 
-Constitutional Alignment (re-checked at v1.0.2):
-  ✅ I. Component Structure Compliance — unchanged
-  ✅ II. Test-First Development — unchanged
-  ⬆ III. PRP Methodology — HARDENED. Cascade now mandates the wireframe
-      gate; pure-infra PRPs ship a "no UI" stub rather than skipping.
-  ✅ IV. Docker-First Development — unchanged
-  ✅ V. Progressive Enhancement — unchanged
-  ✅ VI. Privacy & Compliance First — unchanged
+Constitutional Alignment at v1.0.0:
+  I. Household Data Sovereignty
+  II. Consent Before Collection
+  III. Anonymity by Architecture
+  IV. The List Works Without Surveillance
+  V. Transparent Future Monetization
 
-Template Consistency:
-  ☐ .specify/templates/plan-template.md — review for cascade reference
-  ☐ .specify/templates/spec-template.md — review for cascade reference
-  ☐ .specify/templates/tasks-template.md — review for cascade reference
-  ☐ .specify/templates/commands/*.md — verify no command file references
-      the old "wireframes optional" framing
+Template Consistency (carried forward from ScriptHammer template):
+  ✅ .specify/templates/plan-template.md            (no change required)
+  ✅ .specify/templates/spec-template.md            (no change required)
+  ✅ .specify/templates/tasks-template.md           (no change required)
+  ✅ Wireframe gate from ScriptHammer v1.0.2        (preserved in Constraints)
 
-Family Propagation (informational):
-  - GrimGlow Phase 1 constitution v1.0.1 — already shipped
-    (TortoiseWolfe/GrimGlow_planning commit 2466343)
-  - Unity GrimGlow constitution — EXEMPT (Unity track stays at v1.0.1
-    on this dimension; in-Editor mocking is the wireframe equivalent)
-  - RN ScriptHammer / KDG-stack / Headless Drupal — inherit the v1.0.2
-    cascade when each track's v1.0.0 ratifies
-
-Version Decision: MINOR bump to v1.0.2
-  - Principle III text changed; cascade newly enumerated
-  - No principles added or removed
-  - No governance changes
-  - Workspace ~/repos/CLAUDE.md cite updated v1.0.1 → v1.0.2
-  - Strategy plan ~/.claude/plans/trying-to-decide-on-gleaming-kitten.md
-    cite updated v1.0.1 → v1.0.2
+Family Position:
+  eightysix is a ScriptHammer family fork (web/Next.js/Docker/SpecKit stack —
+  sibling of SpokeToWork, TurtleWolfe, and HatCoatAndBoots). Its content
+  domain is a shared household out-of-stock list with consent-gated
+  analytics. See /home/TurtleWolfe/repos/CLAUDE.md for the 5-track family
+  context.
 -->
 
-# ScriptHammer Constitution
+# eightysix Constitution
+
+**Project:** 86 — when something in the fridge runs out, any roommate 86's it
+from their phone (typed, barcode-scanned, or photo-recognized); the shared
+live list doubles as the shopping list. Restocking un-86's it. An append-only
+event log powers household insights and, only with separate explicit consent,
+k-anonymized cross-household research. A fork of ScriptHammer
+(web/Next.js/Docker/SpecKit) — same machinery, privacy-first reframe.
+
+The five principles below apply on **both layers simultaneously**: they shape
+what the product promises households AND how the schema, RLS policies, and
+Edge Functions are built. The disciplines under "Mandatory Constraints" are
+the _how_; the principles above them are the _why_.
 
 ## Core Principles
 
-### I. Component Structure Compliance
+### I. Household Data Sovereignty
 
-Every component MUST follow the 5-file pattern: index.tsx, Component.tsx,
-Component.test.tsx, Component.stories.tsx, and Component.accessibility.test.tsx.
-This structure is enforced via CI/CD pipeline validation. Use the component
-generator (`pnpm run generate:component`) to ensure compliance. No exceptions
-are permitted - manual component creation will cause build failures.
+The household's data belongs to the household; the member's data belongs to
+the member. 86 is the custodian, never the owner.
 
-### II. Test-First Development
+**Forbidden:** any read path that lets one household see another household's
+rows; any export, dashboard, or debug tool that crosses the household
+boundary outside the Principle III rollup; any schema design where deleting
+a user leaves their personal data orphaned but recoverable.
 
-Tests MUST be written before implementation following RED-GREEN-REFACTOR cycle.
-Minimum test coverage of 25% for unit tests, with critical paths requiring
-comprehensive test suites. E2E tests via Playwright for user workflows.
-Accessibility tests using Pa11y for WCAG compliance. Tests run on pre-push
-via Husky hooks.
+**Required:** every domain table carries a `household_id` and an RLS policy
+scoped through active membership (`is_household_member()`); every member can
+export their own data (JSON, theirs to take) and delete their account, with
+the effect on shared rows documented in the privacy policy. Data formats are
+portable — Markdown, JSON, CSV — never trapped.
 
-### III. PRP Methodology with Mandatory Wireframe Gate
+### II. Consent Before Collection
 
-Features are implemented using the PRP workflow as a hard, ordered cascade.
-The wireframe authoring + review step is a **mandatory gate** between
-clarification and planning — it is NOT an optional hook absorbed into a
-role. Pure-infrastructure PRPs (no UI surface, no API visualization) ship a
-"no UI" wireframe stub for explicitness rather than skipping the step.
+No analytics event is recorded without the acting user's explicit, prior,
+revocable opt-in — and the gate is enforced **in the database**, not in the
+client.
 
-The cascade is:
+**Forbidden:** logging `stock_events` rows for non-consenting users (even
+"anonymized" ones — in a 3-person household, a timestamped anonymous event
+is trivially re-identifiable); bundling consent types; pre-checked boxes;
+consent walls that block core function; inferring one consent from another.
+
+**Required:** `consent_records` is append-only with versioned policy text, so
+the audit trail of who agreed to what, when, under which wording, is
+permanent. The RLS INSERT policy on `stock_events` checks the actor's latest
+`analytics_events` consent. Revocation takes effect at the next action — no
+grace period, no batch flush.
+
+### III. Anonymity by Architecture
+
+Cross-household aggregation exists only through structures that make
+re-identification impossible — the boundary is enforced by the schema, not
+by promises.
+
+**Forbidden:** any client-readable path to raw `stock_events` outside the
+actor's own households; rollups keyed by household or user; aggregate
+buckets small enough to single out a household.
+
+**Required:** cross-household research data flows through SECURITY DEFINER
+views/functions only, which (a) strip `household_id` and `actor_id`,
+(b) include only events from users whose latest `aggregate_research` consent
+is granted (default: denied), and (c) apply k-anonymity — any bucket with
+fewer than 10 distinct households is suppressed. The view definition ships
+in the monolithic migration so the boundary is reviewable in one place.
+
+### IV. The List Works Without Surveillance
+
+Declining analytics never degrades the core product. The list is the
+product; the data is a privilege the user may grant.
+
+**Forbidden:** feature-gating list functionality on analytics consent;
+nagging re-prompts; dark patterns that make "decline" harder than "accept";
+quietly degraded sync, autocomplete, or capture for non-consenting users.
+
+**Required:** operational writes (`items` add/restock) work identically for
+consenting and non-consenting members. Household dashboards label their
+basis honestly: "based on events from consenting members." A household of
+zero consenting members still has a fully working 86 list, barcode scanner,
+and photo recognition.
+
+### V. Transparent Future Monetization
+
+If aggregate data is ever monetized (research sales, sponsored insights,
+ads), that requires fresh, separate, explicit opt-in under its own policy
+version — never inferred, never bundled, never retroactive.
+
+**Forbidden:** treating `analytics_events` or `aggregate_research` consent
+as covering external monetization; retroactively including pre-consent
+events in any monetized dataset; ad targeting from individual (rather than
+k-anonymized aggregate) data.
+
+**Required:** the `marketing_external` consent type is reserved in the
+schema from day one (no UI until it is real), so the future question is
+asked honestly when it arrives. Any monetization PRP must cite this
+principle and pass a constitutional review before /specify.
+
+## Mandatory Constraints
+
+These are the operational disciplines inherited from ScriptHammer. They are
+_how_ we build; principles I–V are _why_. Constraints stay enforced by CI;
+violations break the build.
+
+### Docker-First Development
+
+All development happens in containers. Never install packages on the host
+(`pnpm install` runs _inside_ the container). Never `sudo` to fix
+permissions. The container runs as your user with correct UID/GID. Commit
+from inside the container so husky/lint-staged/gitleaks hooks run; never
+`--no-verify`.
+
+### 5-File Component Pattern
+
+Every component MUST ship as five files in its own directory:
 
 ```
-PRP → /speckit.specify → /speckit.clarify
-    → /speckit.wireframe.generate → /speckit.wireframe.review     [HARD GATE]
-    → /speckit.plan → /speckit.checklist → /speckit.tasks
-    → /speckit.analyze → /speckit.implement
-    → /speckit.wireframe.screenshots                              [post-implement regression]
+ComponentName/
+  index.tsx                          # barrel export
+  ComponentName.tsx                  # the component
+  ComponentName.test.tsx             # Vitest unit + RTL component tests
+  ComponentName.stories.tsx          # Storybook story
+  ComponentName.accessibility.test.tsx  # Pa11y a11y test
 ```
 
-**Why a hard gate:** the 2026-05-02 strategy session confirmed (via
-operator practice on the Unity track without mockups) that the discipline
-matters even where the step has been treated as optional. Promoting the
-gate to mandatory eliminates the "I'll skip wireframes for this one"
-exception that erodes the discipline over time. Each PRP tracks from
-inception to completion with clear success criteria. PRPs supersede ad-hoc
-feature development.
+Generate with `pnpm run generate:component` — never create by hand. CI
+rejects components missing any of the five files.
 
-**Track exemption:** Unity tracks are exempt from this gate. Unity's
-in-Editor scene mocking serves the same purpose as SVG wireframes for web
-work; the SVG validator does not apply to Unity prefabs/scenes. All
-non-Unity tracks (web/RN/KDG/Drupal) inherit this hardened gate when their
-constitution ratifies at v1.0.0.
+### Test-First Development
 
-### IV. Docker-First Development
+RED → GREEN → REFACTOR. Tests precede implementation. Stack: Vitest (unit +
+component, 25%+ coverage minimum), Playwright (E2E), Pa11y (WCAG 2.1 AA,
+zero violations), Storybook (every component has a story). Tests run on
+pre-push via Husky. RLS policies get contract tests — Principle I and II
+enforcement IS testable behavior, and ships tested.
 
-Docker Compose is the primary development environment to ensure consistency
-across all developers. Local development is supported but Docker takes
-precedence for debugging environment issues. All CI/CD uses containerized
-environments. Production deployment assumes containerization.
+### SpecKit Workflow (with the v1.0.2 Wireframe Gate)
 
-### V. Progressive Enhancement
+All features flow through:
 
-Start with core functionality that works everywhere, then enhance with
-progressive features. PWA capabilities for offline support. Accessibility
-features (colorblind modes, font switching) as first-class requirements.
-Performance optimization targeting 90+ Lighthouse scores. Mobile-first
-responsive design.
+```
+/speckit.specify → /speckit.clarify
+       → wireframe generate → wireframe review          [HARD GATE]
+       → /speckit.plan → /speckit.checklist → /speckit.tasks
+       → /speckit.analyze → /speckit.implement
+       → wireframe screenshots                          [post-implement regression]
+```
 
-### VI. Privacy & Compliance First
+The wireframe gate (inherited from ScriptHammer v1.0.2) is mandatory.
+Pure-infrastructure PRPs ship a "no UI" wireframe stub rather than skipping
+the step. Dark-theme wireframes document backend architecture (RLS,
+sequence flows) and count toward the gate.
 
-GDPR compliance is mandatory with explicit consent for all data collection.
-Cookie consent system must be implemented before any tracking. Analytics
-only activate after user consent. Geolocation requires explicit permission.
-Third-party services need consent modals. Privacy controls accessible to users.
+### Static Hosting
 
-## Technical Standards
+Deploys to GitHub Pages. No server-side API routes. All server logic lives
+in Supabase (database, RLS, Edge Functions, triggers). Secrets live in
+Supabase Vault / Edge Function secrets — the vision-model key for photo
+recognition never reaches the client. Route protection is the
+`<ProtectedRoute>` client component; data security is enforced at the
+database layer via RLS, not at the request layer.
 
-### Framework Requirements
+### Monolithic Supabase Migration
 
-- Next.js 15.5+ with App Router and static export
-- React 19+ with TypeScript strict mode
-- Tailwind CSS 4 with DaisyUI for theming
-- pnpm 10.16.1 as package manager
-- Node.js 20+ LTS version
+One migration file, one `BEGIN;`...`COMMIT;`, every statement idempotent
+(`IF NOT EXISTS`, `DROP POLICY IF EXISTS` before `CREATE POLICY`). RLS on
+every table. Never create separate migration files.
 
-### Testing Standards
+### Progressive Enhancement + WCAG AA
 
-- Vitest for unit testing (58%+ coverage target)
-- Playwright for E2E testing (40+ test scenarios)
-- Pa11y for accessibility testing (WCAG AA)
-- Storybook for component documentation
-- MSW for API mocking in tests
+Core HTML works first. Then PWA (offline capture at the fridge is a
+first-class flow, not an edge case — queue locally, sync honestly with
+`occurred_at` preserved). Then a11y (44px touch targets, keyboard nav,
+screen reader). Then performance (90+ Lighthouse). A roommate using a
+screen reader must be able to 86 the milk.
 
-### Code Quality
+### Privacy & Compliance First
 
-- ESLint with Next.js configuration
-- Prettier for consistent formatting
-- TypeScript strict mode enabled
-- Husky pre-commit hooks for validation
-- Component structure validation in CI/CD
-
-## Development Workflow
-
-### Sprint Methodology
-
-Sprints follow PRP completion cycles with clear milestones. Technical debt
-reduction sprints occur between feature sprints. Each sprint has defined
-success metrics and test coverage goals. Sprint constitutions may supersede
-this document temporarily for focused work.
-
-### PRP Execution Flow
-
-1. Create PRP document with requirements
-2. Run /plan command for technical approach
-3. Run /tasks command for task breakdown
-4. Implement following generated tasks
-5. Validate against PRP success criteria
-6. Update PRP status dashboard
-
-### Contribution Process
-
-- Fork repository and use auto-configuration
-- Create feature branch following naming convention
-- Implement using Docker environment
-- Ensure all tests pass before push
-- Submit PR with comprehensive description
-- Pass all CI/CD checks for merge
-
-## Quality Gates
-
-### Build Requirements
-
-- All components follow 5-file structure
-- TypeScript compilation without errors
-- Build completes without warnings
-- Static export generates successfully
-- Bundle size under 150KB first load
-
-### Test Requirements
-
-- Unit test coverage above 25% minimum
-- All accessibility tests passing
-- E2E tests run successfully locally
-- No failing tests in test suite
-- Storybook stories render without errors
-
-### Performance Standards
-
-- Lighthouse Performance: 90+ score
-- Lighthouse Accessibility: 95+ score
-- First Contentful Paint under 2 seconds
-- Time to Interactive under 3.5 seconds
-- Cumulative Layout Shift under 0.1
-
-### Accessibility Standards
-
-- WCAG 2.1 Level AA compliance
-- Keyboard navigation fully functional
-- Screen reader compatibility verified
-- Color contrast ratios meet standards
-- Focus indicators clearly visible
+GDPR-honest by default. Cookie consent before any tracking. Analytics only
+after explicit consent (Principle II makes this structural). RLS on every
+Supabase table. No third-party services without a consent modal.
 
 ## Governance
 
 ### Amendment Procedure
 
-Constitution amendments require documentation of rationale, impact analysis
-on existing codebase, migration plan if breaking changes, and approval via
-repository discussion. Major version bumps for principle changes, minor for
-additions, patch for clarifications.
+- Amendments use `/speckit.constitution` which auto-syncs
+  `.specify/templates/` and writes a Sync Impact Report at the top of this
+  file.
+- Each amendment documents rationale, impact analysis, and migration plan
+  if breaking.
+- Any amendment weakening Principles I–III requires the maintainer to write
+  the user-facing announcement FIRST — if you can't announce it plainly,
+  don't ship it.
 
-### Compliance Verification
+### Versioning (Semver)
 
-All pull requests must verify constitutional compliance. CI/CD pipeline
-enforces technical standards automatically. Code reviews check principle
-adherence. Sprint retrospectives evaluate constitution effectiveness.
+- **MAJOR** — principle removal, redefinition, or governance restructure.
+- **MINOR** — principle addition, materially expanded scope.
+- **PATCH** — clarifications, wording, typos.
 
-### Version Management
+### Compliance & Enforcement
 
-Constitution follows semantic versioning. Sprint-specific constitutions may
-temporarily override for focused work. All versions archived in spec-kit
-directory. Amendments tracked with ratification dates.
+- All PRs verify constitutional compliance — CI enforces the technical
+  Mandatory Constraints automatically; reviewers check principle adherence,
+  with special scrutiny on any diff touching `stock_events`,
+  `consent_records`, or SECURITY DEFINER objects.
+- This constitution supersedes all other practices. Sprint constitutions
+  may temporarily override for focused work, with documented rationale —
+  but never Principles I–III.
+- Use `CLAUDE.md` at the repo root for AI-assistance development guidance.
 
-### Enforcement
-
-The constitution supersedes all other practices. Violations must be justified
-with documented rationale. Temporary exceptions require sprint constitution.
-Use CLAUDE.md for runtime development guidance specific to AI assistance.
-
-**Version**: 1.0.2 | **Ratified**: 2025-09-20 (v1.0.1) | **Last Amended**: 2026-05-06 (v1.0.2)
+**Version**: 1.0.0 | **Ratified**: 2026-06-12 | **Last Amended**: 2026-06-12
 
 ## Amendment Log
 
-### v1.0.2 — 2026-05-06 — Wireframe Gate Hardening
+### v1.0.0 — 2026-06-12 — Ratification
 
-**Scope:** Principle III (PRP Methodology).
-
-**Change:** Promoted the wireframe authoring + review step from an
-implicit role-absorbed hook to an explicit mandatory gate between
-`/speckit.clarify` and `/speckit.plan`. Enumerated the full cascade in
-Principle III. Added explicit handling for pure-infrastructure PRPs ("no
-UI" stub instead of skipping) and an explicit Unity track exemption.
-
-**Rationale:** Per the 2026-05-02 strategy session
-(`~/.claude/plans/trying-to-decide-on-gleaming-kitten.md`), operator
-practice on the Unity track without mockups confirmed the discipline
-matters even where it had been treated as optional. The
-`.specify/extensions/wireframe/` toolchain (6 skills, validator, viewer)
-already exists and is in use; the constitution was lagging the practice.
-This amendment closes that gap and propagates the hardened gate to the
-rest of the GrimGlow IP family (RN ScriptHammer, KDG-stack, Headless
-Drupal) when each track's v1.0.0 ratifies.
-
-**Impact:** No code changes required. Existing PRPs already follow this
-cascade in practice (see `features/CLAUDE.md` workflow documentation).
-This amendment is the source-of-truth alignment.
-
-**Family propagation:**
-
-- GrimGlow Phase 1 constitution v1.0.1 — already shipped
-  (TortoiseWolfe/GrimGlow_planning commit 2466343)
-- Unity GrimGlow constitution — exempt; stays at v1.0.1 on this dimension
-- RN ScriptHammer / KDG-stack / Headless Drupal — inherit when each
-  track's v1.0.0 ratifies
-
-### v1.0.1 — 2025-09-25
-
-(Pre-amendment-log baseline; no scope recorded in this format.)
-
-### v1.0.0 — 2025-09-20
-
-Constitution ratified.
+Fresh ratification of a constitution for the eightysix project (generated
+from the TortoiseWolfe/ScriptHammer template, then wholesale-reframed).
+Five privacy-first principles take the Core slots; ScriptHammer's
+disciplines move into Mandatory Constraints. Structural pattern mirrors
+HatCoatAndBoots v1.0.0 and SpokeToWork v1.0.0. The privacy principles are
+load-bearing for the product's planned analytics: consent enforced in RLS
+(II), k-anonymized definer-view rollups (III), and a reserved
+`marketing_external` consent type (V) are schema-level commitments made
+before the first feature was specified.

@@ -1,8 +1,8 @@
-// ScriptHammer Service Worker v1.0.0
+// eightysix Service Worker v1.0.0
 // Provides offline support, caching, and background sync
 // Note: Cache name includes project name - updated by rebrand script
 
-const CACHE_VERSION = 'scripthammer-v1.0.0'; // Updated by scripts/rebrand.sh
+const CACHE_VERSION = 'eightysix-v1.0.0'; // Updated by scripts/rebrand.sh
 const STATIC_CACHE = `${CACHE_VERSION}-static`;
 const DYNAMIC_CACHE = `${CACHE_VERSION}-dynamic`;
 const IMAGE_CACHE = `${CACHE_VERSION}-images`;
@@ -49,7 +49,7 @@ self.addEventListener('activate', (event) => {
           cacheNames
             .filter((cacheName) => {
               return (
-                cacheName.startsWith('scripthammer-') &&
+                cacheName.startsWith('eightysix-') &&
                 cacheName !== STATIC_CACHE &&
                 cacheName !== DYNAMIC_CACHE &&
                 cacheName !== IMAGE_CACHE
@@ -145,15 +145,17 @@ self.addEventListener('fetch', (event) => {
             }
             // Return offline page if available
             if (request.destination === 'document') {
-              return caches.match(new URL('./offline.html', self.registration.scope).href).catch(() => {
-                return new Response('Offline - Content not available', {
-                  status: 503,
-                  statusText: 'Service Unavailable',
-                  headers: new Headers({
-                    'Content-Type': 'text/plain',
-                  }),
+              return caches
+                .match(new URL('./offline.html', self.registration.scope).href)
+                .catch(() => {
+                  return new Response('Offline - Content not available', {
+                    status: 503,
+                    statusText: 'Service Unavailable',
+                    headers: new Headers({
+                      'Content-Type': 'text/plain',
+                    }),
+                  });
                 });
-              });
             }
           });
         })
@@ -214,7 +216,7 @@ self.addEventListener('message', (event) => {
       caches.keys().then((cacheNames) => {
         return Promise.all(
           cacheNames
-            .filter((cacheName) => cacheName.startsWith('scripthammer-'))
+            .filter((cacheName) => cacheName.startsWith('eightysix-'))
             .map((cacheName) => caches.delete(cacheName))
         );
       })
@@ -236,7 +238,7 @@ self.addEventListener('push', (event) => {
   };
 
   event.waitUntil(
-    self.registration.showNotification('ScriptHammer Notification', options)
+    self.registration.showNotification('eightysix Notification', options)
   );
 });
 

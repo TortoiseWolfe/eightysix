@@ -19,9 +19,9 @@
 
 ### Other Issues
 
-| ID   | Issue                                                           | Code          | Classification |
-| ---- | --------------------------------------------------------------- | ------------- | -------------- |
-| X-01 | Signature format wrong: 'ScriptHammer v0.1 - Conversation Er... | SIGNATURE-004 | REGENERATE     |
+| ID   | Issue                                                        | Code          | Classification |
+| ---- | ------------------------------------------------------------ | ------------- | -------------- |
+| X-01 | Signature format wrong: 'eightysix v0.1 - Conversation Er... | SIGNATURE-004 | REGENERATE     |
 
 ### Annotation Issues
 

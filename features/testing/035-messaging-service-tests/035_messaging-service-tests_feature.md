@@ -2,7 +2,7 @@
 
 **Feature ID**: 035
 **Category**: testing
-**Source**: ScriptHammer README (SPEC-052)
+**Source**: eightysix README (SPEC-052)
 **Status**: Ready for SpecKit
 
 ## Description

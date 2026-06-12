@@ -19,7 +19,7 @@ Passing SVGs (e.g., `006-template-fork-experience/01-service-setup-guidance.svg`
 ### Desktop Footer
 
 - Uses include: `<use href="includes/footer-desktop.svg#site-footer" x="0" y="640"/>`
-- Contains: ScriptHammer brand, nav links, copyright
+- Contains: eightysix brand, nav links, copyright
 - Background: `path` element with rounded BOTTOM corners only
 
 ### Mobile Header
@@ -68,6 +68,7 @@ All three 003 SVGs follow the same nav pattern:
 
 - **CORRECT**: Uses `<use href="includes/footer-mobile.svg#mobile-bottom-nav" x="0" y="664"/>`
 - **ISSUE**: Active state overlay for Account tab:
+
   ```xml
   <g transform="translate(270, 664)">
     <rect width="90" height="56" rx="0" fill="#8b5cf6"/>  <!-- rx="0" - no rounded corners -->
