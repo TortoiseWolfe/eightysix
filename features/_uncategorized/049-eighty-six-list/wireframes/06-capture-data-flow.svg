@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Capture Data Flow - Dark Theme architecture page diagramming the RLS policy consent gate -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     viewBox="0 0 1920 1080" width="1920" height="1080">
+  <defs>
+    <!-- Light theme gradient (validator compliance) -->
+    <linearGradient id="bg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#c7ddf5"/>
+      <stop offset="100%" stop-color="#b8d4f0"/>
+    </linearGradient>
+    <!-- Dark theme gradient -->
+    <linearGradient id="bg-dark" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+    <!-- Arrow markers -->
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#8b5cf6"/>
+    </marker>
+    <marker id="arrow-green" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#22c55e"/>
+    </marker>
+    <marker id="arrow-red" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#ef4444"/>
+    </marker>
+    <marker id="arrow-gray" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#64748b"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1920" height="1080" fill="url(#bg-dark)"/>
+
+  <!-- Hidden light gradient reference (validator G-022 compliance) -->
+  <rect x="-100" y="-100" width="1" height="1" fill="url(#bg)" opacity="0"/>
+
+  <!-- CENTERED TITLE -->
+  <text x="960" y="28" text-anchor="middle" font-family="system-ui, sans-serif"
+        font-size="18" font-weight="700" fill="#94a3b8" letter-spacing="1">
+    CAPTURE DATA FLOW - CONSENT GATED EVENTS
+  </text>
+
+  <!-- Section labels (validator compliance) -->
+  <text x="680" y="52" font-family="system-ui, sans-serif" font-size="14" fill="#64748b">DESKTOP (16:9)</text>
+  <text x="1360" y="52" font-family="system-ui, sans-serif" font-size="14" fill="#64748b">MOBILE (9:16)</text>
+
+  <!-- Hidden includes (validator HDR-001 compliance) -->
+  <g id="desktop" opacity="0" transform="translate(-9999, -9999)">
+    <use href="includes/header-desktop.svg#desktop-header" x="0" y="0"/>
+    <use href="includes/footer-desktop.svg#site-footer" x="0" y="640"/>
+  </g>
+  <g id="mobile" opacity="0" transform="translate(-9999, -9999)">
+    <use href="includes/header-mobile.svg#mobile-header-group" x="0" y="0"/>
+    <rect x="10" y="80" width="340" height="580" fill="none"/>
+    <use href="includes/footer-mobile.svg#mobile-bottom-nav" x="0" y="664"/>
+  </g>
+
+  <!-- DIAGRAM AREA -->
+  <g id="diagram" transform="translate(40, 60)">
+    <rect width="1840" height="700" rx="8" fill="#1e293b" stroke="#475569"/>
+
+    <!-- Column headers -->
+    <text x="140" y="40" text-anchor="middle" fill="#94a3b8" font-size="16" font-weight="bold">CAPTURE MODES</text>
+    <text x="410" y="40" text-anchor="middle" fill="#94a3b8" font-size="16" font-weight="bold">CONFIRM</text>
+    <text x="715" y="40" text-anchor="middle" fill="#94a3b8" font-size="16" font-weight="bold">ONE SUBMIT PATH</text>
+    <text x="1060" y="40" text-anchor="middle" fill="#94a3b8" font-size="16" font-weight="bold">PARALLEL WRITES</text>
+    <text x="1540" y="40" text-anchor="middle" fill="#94a3b8" font-size="16" font-weight="bold">FANOUT AND EVENT LOG</text>
+
+    <!-- (a) Mode boxes -->
+    <g transform="translate(40, 90)">
+      <rect width="200" height="90" rx="8" fill="#334155" stroke="#22c55e" stroke-width="2"/>
+      <text x="100" y="35" text-anchor="middle" fill="#22c55e" font-size="16" font-weight="bold">Type</text>
+      <text x="100" y="62" text-anchor="middle" fill="#94a3b8" font-size="14">this feature</text>
+    </g>
+    <g transform="translate(40, 220)">
+      <rect width="200" height="90" rx="8" fill="#334155" stroke="#64748b" stroke-width="2" stroke-dasharray="6,4"/>
+      <text x="100" y="35" text-anchor="middle" fill="#94a3b8" font-size="16" font-weight="bold">Scan (052)</text>
+      <text x="100" y="62" text-anchor="middle" fill="#64748b" font-size="14">coming soon</text>
+    </g>
+    <g transform="translate(40, 350)">
+      <rect width="200" height="90" rx="8" fill="#334155" stroke="#64748b" stroke-width="2" stroke-dasharray="6,4"/>
+      <text x="100" y="35" text-anchor="middle" fill="#94a3b8" font-size="16" font-weight="bold">Snap (053)</text>
+      <text x="100" y="62" text-anchor="middle" fill="#64748b" font-size="14">coming soon</text>
+    </g>
+
+    <!-- (b) Confirm step -->
+    <g transform="translate(310, 200)">
+      <rect width="200" height="130" rx="8" fill="#334155" stroke="#8b5cf6" stroke-width="2"/>
+      <text x="100" y="35" text-anchor="middle" fill="#e2e8f0" font-size="16" font-weight="bold">Confirm step</text>
+      <text x="100" y="62" text-anchor="middle" fill="#94a3b8" font-size="14">edit name plus</text>
+      <text x="100" y="82" text-anchor="middle" fill="#94a3b8" font-size="14">optional category</text>
+      <text x="100" y="108" text-anchor="middle" fill="#64748b" font-size="14">(FR-005)</text>
+    </g>
+
+    <!-- (c) submitItemAction tall box -->
+    <g transform="translate(590, 130)">
+      <rect width="250" height="320" rx="8" fill="#334155" stroke="#f59e0b" stroke-width="2"/>
+      <text x="125" y="45" text-anchor="middle" fill="#f59e0b" font-size="16" font-weight="bold">submitItemAction()</text>
+      <text x="125" y="72" text-anchor="middle" fill="#e2e8f0" font-size="14">single submit path</text>
+      <line x1="25" y1="95" x2="225" y2="95" stroke="#475569"/>
+      <text x="125" y="125" text-anchor="middle" fill="#94a3b8" font-size="14">one code path -</text>
+      <text x="125" y="150" text-anchor="middle" fill="#94a3b8" font-size="14">offline queue (051)</text>
+      <text x="125" y="175" text-anchor="middle" fill="#fbbf24" font-size="14" font-weight="bold">wraps HERE</text>
+      <line x1="25" y1="200" x2="225" y2="200" stroke="#475569"/>
+      <text x="125" y="230" text-anchor="middle" fill="#64748b" font-size="14">shared by Type, Scan,</text>
+      <text x="125" y="252" text-anchor="middle" fill="#64748b" font-size="14">and Snap (FR-016)</text>
+    </g>
+    <!-- Callout 1 -->
+    <circle cx="865" cy="122" r="14" fill="#dc2626"/>
+    <text x="865" y="127" text-anchor="middle" fill="#e8d4b8" font-size="14" font-weight="bold">1</text>
+
+    <!-- (d-top) items upsert -->
+    <g transform="translate(920, 90)">
+      <rect width="280" height="160" rx="8" fill="#334155" stroke="#22c55e" stroke-width="2"/>
+      <text x="140" y="32" text-anchor="middle" fill="#22c55e" font-size="16" font-weight="bold">items upsert</text>
+      <text x="140" y="60" text-anchor="middle" fill="#e2e8f0" font-size="14">client-generated id =</text>
+      <text x="140" y="80" text-anchor="middle" fill="#e2e8f0" font-size="14">idempotent retries</text>
+      <text x="140" y="108" text-anchor="middle" fill="#94a3b8" font-size="14">optimistic on the</text>
+      <text x="140" y="128" text-anchor="middle" fill="#94a3b8" font-size="14">actor's device (FR-006)</text>
+    </g>
+
+    <!-- (e) Realtime fanout -->
+    <g transform="translate(1280, 110)">
+      <rect width="200" height="120" rx="8" fill="#334155" stroke="#8b5cf6" stroke-width="2"/>
+      <text x="100" y="38" text-anchor="middle" fill="#a78bfa" font-size="16" font-weight="bold">Realtime fanout</text>
+      <text x="100" y="66" text-anchor="middle" fill="#94a3b8" font-size="14">postgres_changes</text>
+      <text x="100" y="92" text-anchor="middle" fill="#64748b" font-size="14">(FR-002)</text>
+    </g>
+    <!-- Callout 4 -->
+    <circle cx="1515" cy="80" r="14" fill="#dc2626"/>
+    <text x="1515" y="85" text-anchor="middle" fill="#e8d4b8" font-size="14" font-weight="bold">4</text>
+
+    <!-- Member device boxes -->
+    <g transform="translate(1560, 70)">
+      <rect width="220" height="60" rx="8" fill="#334155" stroke="#475569"/>
+      <text x="110" y="28" text-anchor="middle" fill="#e2e8f0" font-size="14" font-weight="bold">member A</text>
+      <text x="110" y="48" text-anchor="middle" fill="#64748b" font-size="14">list updates live</text>
+    </g>
+    <g transform="translate(1560, 150)">
+      <rect width="220" height="60" rx="8" fill="#334155" stroke="#475569"/>
+      <text x="110" y="28" text-anchor="middle" fill="#e2e8f0" font-size="14" font-weight="bold">member B</text>
+      <text x="110" y="48" text-anchor="middle" fill="#64748b" font-size="14">list updates live</text>
+    </g>
+    <g transform="translate(1560, 230)">
+      <rect width="220" height="60" rx="8" fill="#334155" stroke="#475569"/>
+      <text x="110" y="28" text-anchor="middle" fill="#e2e8f0" font-size="14" font-weight="bold">member C</text>
+      <text x="110" y="48" text-anchor="middle" fill="#64748b" font-size="14">list updates live</text>
+    </g>
+    <text x="1670" y="318" text-anchor="middle" fill="#22c55e" font-size="14" font-weight="bold">under 2s (SC-002)</text>
+
+    <!-- (d-bottom) Consent gate diamond -->
+    <polygon points="1045,370 1230,457 1045,545 860,457" fill="#334155" stroke="#38bdf8" stroke-width="2"/>
+    <text x="1045" y="438" text-anchor="middle" fill="#38bdf8" font-size="14" font-weight="bold">actor has analytics_events</text>
+    <text x="1045" y="458" text-anchor="middle" fill="#38bdf8" font-size="14" font-weight="bold">consent?</text>
+    <text x="1045" y="482" text-anchor="middle" fill="#e2e8f0" font-size="14">checked in the DATABASE -</text>
+    <text x="1045" y="502" text-anchor="middle" fill="#e2e8f0" font-size="14">RLS, not client (FR-013)</text>
+    <!-- Callout 2 -->
+    <circle cx="1000" cy="345" r="14" fill="#dc2626"/>
+    <text x="1000" y="350" text-anchor="middle" fill="#e8d4b8" font-size="14" font-weight="bold">2</text>
+
+    <!-- Events log box (stacked rows) -->
+    <g transform="translate(1320, 340)">
+      <rect width="240" height="180" rx="8" fill="#334155" stroke="#22c55e" stroke-width="2"/>
+      <text x="120" y="26" text-anchor="middle" fill="#22c55e" font-size="14" font-weight="bold">stock_events (append-only)</text>
+      <rect x="15" y="38" width="210" height="24" rx="4" fill="#1e293b" stroke="#475569"/>
+      <text x="25" y="55" fill="#94a3b8" font-size="14">86 - milk - type - 7:42p</text>
+      <rect x="15" y="66" width="210" height="24" rx="4" fill="#1e293b" stroke="#475569"/>
+      <text x="25" y="83" fill="#94a3b8" font-size="14">restock - eggs - 6:10p</text>
+      <rect x="15" y="94" width="210" height="24" rx="4" fill="#1e293b" stroke="#475569"/>
+      <text x="25" y="111" fill="#94a3b8" font-size="14">86 - coffee - type - 8:01a</text>
+      <text x="120" y="138" text-anchor="middle" fill="#64748b" font-size="14">item name, category, action,</text>
+      <text x="120" y="156" text-anchor="middle" fill="#64748b" font-size="14">capture method, occurred_at</text>
+      <text x="120" y="174" text-anchor="middle" fill="#64748b" font-size="14">vs recorded_at</text>
+    </g>
+    <!-- Callout 3 -->
+    <circle cx="1440" cy="318" r="14" fill="#dc2626"/>
+    <text x="1440" y="323" text-anchor="middle" fill="#e8d4b8" font-size="14" font-weight="bold">3</text>
+
+    <!-- Crossed-out empty box (no consent path) -->
+    <g transform="translate(1630, 370)">
+      <rect width="170" height="110" rx="8" fill="#1e293b" stroke="#ef4444" stroke-width="2" stroke-dasharray="6,4"/>
+      <line x1="10" y1="10" x2="160" y2="100" stroke="#ef4444" stroke-width="2"/>
+      <line x1="160" y1="10" x2="10" y2="100" stroke="#ef4444" stroke-width="2"/>
+      <text x="85" y="62" text-anchor="middle" fill="#f87171" font-size="14" font-weight="bold">zero rows</text>
+    </g>
+    <text x="1715" y="505" text-anchor="middle" fill="#ef4444" font-size="14" font-weight="bold">no -&gt; NOTHING WRITTEN</text>
+    <text x="1715" y="523" text-anchor="middle" fill="#f87171" font-size="14">identical UX (Principle IV)</text>
+
+    <!-- FLOW ARROWS -->
+    <!-- Modes into Confirm -->
+    <line x1="240" y1="135" x2="300" y2="235" stroke="#22c55e" stroke-width="2" marker-end="url(#arrow-green)"/>
+    <line x1="240" y1="265" x2="300" y2="262" stroke="#64748b" stroke-width="2" stroke-dasharray="6,4" marker-end="url(#arrow-gray)"/>
+    <line x1="240" y1="395" x2="300" y2="290" stroke="#64748b" stroke-width="2" stroke-dasharray="6,4" marker-end="url(#arrow-gray)"/>
+    <!-- Confirm into submit path -->
+    <line x1="510" y1="265" x2="580" y2="280" stroke="#8b5cf6" stroke-width="2" marker-end="url(#arrow)"/>
+    <!-- Submit path: two parallel writes -->
+    <line x1="840" y1="230" x2="910" y2="175" stroke="#8b5cf6" stroke-width="2" marker-end="url(#arrow)"/>
+    <line x1="840" y1="380" x2="852" y2="448" stroke="#8b5cf6" stroke-width="2" marker-end="url(#arrow)"/>
+    <!-- Upsert into Realtime fanout -->
+    <line x1="1200" y1="170" x2="1270" y2="168" stroke="#8b5cf6" stroke-width="2" marker-end="url(#arrow)"/>
+    <!-- Fanout to member devices -->
+    <line x1="1480" y1="145" x2="1550" y2="100" stroke="#22c55e" stroke-width="2" marker-end="url(#arrow-green)"/>
+    <line x1="1480" y1="170" x2="1550" y2="180" stroke="#22c55e" stroke-width="2" marker-end="url(#arrow-green)"/>
+    <line x1="1480" y1="195" x2="1550" y2="260" stroke="#22c55e" stroke-width="2" marker-end="url(#arrow-green)"/>
+    <!-- Consent gate: yes -->
+    <text x="1130" y="312" fill="#22c55e" font-size="14" font-weight="bold">yes -&gt; append stock_event (immutable, FR-014)</text>
+    <line x1="1230" y1="457" x2="1310" y2="425" stroke="#22c55e" stroke-width="2" marker-end="url(#arrow-green)"/>
+    <!-- Consent gate: no -->
+    <path d="M 1045,550 L 1045,580 L 1715,580 L 1715,490" fill="none" stroke="#ef4444" stroke-width="2" stroke-dasharray="6,3" marker-end="url(#arrow-red)"/>
+
+    <!-- Household boundary strip -->
+    <rect x="40" y="600" width="1760" height="55" rx="8" fill="#1e293b" stroke="#ef4444" stroke-width="2" stroke-dasharray="8,4"/>
+    <text x="920" y="633" text-anchor="middle" font-size="14"><tspan fill="#f87171" font-weight="bold">HOUSEHOLD BOUNDARY: </tspan><tspan fill="#94a3b8">every arrow above is scoped by is_household_member() from feature 048 (FR-015)</tspan></text>
+  </g>
+
+  <!-- ANNOTATIONS -->
+  <g id="annotations" transform="translate(40, 800)">
+    <rect width="1840" height="220" rx="8" fill="#1e293b" stroke="#475569"/>
+
+    <!-- Group 1: One Submit Path, Queue-Ready -->
+    <g transform="translate(20, 20)">
+      <circle cx="14" cy="14" r="14" fill="#dc2626"/>
+      <text x="14" y="19" text-anchor="middle" fill="#e8d4b8" font-size="14" font-weight="bold">1</text>
+      <text x="40" y="19" fill="#e8d4b8" font-size="14" font-weight="bold">One Submit Path, Queue-Ready</text>
+      <text x="40" y="42" fill="#94a3b8" font-size="14">Every capture mode funnels into submitItemAction().</text>
+      <text x="40" y="62" fill="#94a3b8" font-size="14">Features 051 / 052 / 053 plug into this one lane.</text>
+      <a href="#US-002"><rect x="40" y="74" width="55" height="20" rx="4" fill="#0891b2"/><text x="67" y="88" text-anchor="middle" fill="#e8d4b8" font-size="14">US-002</text></a>
+      <a href="#FR-005"><rect x="100" y="74" width="55" height="20" rx="4" fill="#2563eb"/><text x="127" y="88" text-anchor="middle" fill="#e8d4b8" font-size="14">FR-005</text></a>
+      <a href="#FR-016"><rect x="160" y="74" width="55" height="20" rx="4" fill="#2563eb"/><text x="187" y="88" text-anchor="middle" fill="#e8d4b8" font-size="14">FR-016</text></a>
+      <a href="#SC-006"><rect x="220" y="74" width="55" height="20" rx="4" fill="#ea580c"/><text x="247" y="88" text-anchor="middle" fill="#e8d4b8" font-size="14">SC-006</text></a>
+    </g>
+
+    <!-- Group 2: Consent Gate in the Database -->
+    <g transform="translate(480, 20)">
+      <circle cx="14" cy="14" r="14" fill="#dc2626"/>
+      <text x="14" y="19" text-anchor="middle" fill="#e8d4b8" font-size="14" font-weight="bold">2</text>
+      <text x="40" y="19" fill="#e8d4b8" font-size="14" font-weight="bold">Consent Gate in the Database</text>
+      <text x="40" y="42" fill="#94a3b8" font-size="14">Decline means zero rows written, not anonymized rows.</text>
+      <text x="40" y="62" fill="#94a3b8" font-size="14">The gate lives in RLS, never in client code.</text>
+      <a href="#US-004"><rect x="40" y="74" width="55" height="20" rx="4" fill="#0891b2"/><text x="67" y="88" text-anchor="middle" fill="#e8d4b8" font-size="14">US-004</text></a>
+      <a href="#FR-012"><rect x="100" y="74" width="55" height="20" rx="4" fill="#2563eb"/><text x="127" y="88" text-anchor="middle" fill="#e8d4b8" font-size="14">FR-012</text></a>
+      <a href="#FR-013"><rect x="160" y="74" width="55" height="20" rx="4" fill="#2563eb"/><text x="187" y="88" text-anchor="middle" fill="#e8d4b8" font-size="14">FR-013</text></a>
+      <a href="#SC-004"><rect x="220" y="74" width="55" height="20" rx="4" fill="#ea580c"/><text x="247" y="88" text-anchor="middle" fill="#e8d4b8" font-size="14">SC-004</text></a>
+    </g>
+
+    <!-- Group 3: Append-Only Event Log -->
+    <g transform="translate(940, 20)">
+      <circle cx="14" cy="14" r="14" fill="#dc2626"/>
+      <text x="14" y="19" text-anchor="middle" fill="#e8d4b8" font-size="14" font-weight="bold">3</text>
+      <text x="40" y="19" fill="#e8d4b8" font-size="14" font-weight="bold">Append-Only Event Log</text>
+      <text x="40" y="42" fill="#94a3b8" font-size="14">Immutability is the audit guarantee: no update or</text>
+      <text x="40" y="62" fill="#94a3b8" font-size="14">delete path exists for stock_events.</text>
+      <a href="#US-004"><rect x="40" y="74" width="55" height="20" rx="4" fill="#0891b2"/><text x="67" y="88" text-anchor="middle" fill="#e8d4b8" font-size="14">US-004</text></a>
+      <a href="#FR-014"><rect x="100" y="74" width="55" height="20" rx="4" fill="#2563eb"/><text x="127" y="88" text-anchor="middle" fill="#e8d4b8" font-size="14">FR-014</text></a>
+    </g>
+
+    <!-- Group 4: Realtime Fanout Under 2s -->
+    <g transform="translate(1400, 20)">
+      <circle cx="14" cy="14" r="14" fill="#dc2626"/>
+      <text x="14" y="19" text-anchor="middle" fill="#e8d4b8" font-size="14" font-weight="bold">4</text>
+      <text x="40" y="19" fill="#e8d4b8" font-size="14" font-weight="bold">Realtime Fanout Under 2s</text>
+      <text x="40" y="42" fill="#94a3b8" font-size="14">The shared-list illusion depends on every member's</text>
+      <text x="40" y="62" fill="#94a3b8" font-size="14">device updating within 2 seconds.</text>
+      <a href="#US-001"><rect x="40" y="74" width="55" height="20" rx="4" fill="#0891b2"/><text x="67" y="88" text-anchor="middle" fill="#e8d4b8" font-size="14">US-001</text></a>
+      <a href="#FR-002"><rect x="100" y="74" width="55" height="20" rx="4" fill="#2563eb"/><text x="127" y="88" text-anchor="middle" fill="#e8d4b8" font-size="14">FR-002</text></a>
+      <a href="#SC-002"><rect x="160" y="74" width="55" height="20" rx="4" fill="#ea580c"/><text x="187" y="88" text-anchor="middle" fill="#e8d4b8" font-size="14">SC-002</text></a>
+    </g>
+  </g>
+
+  <!-- Key Concepts Row (G-047) -->
+
+
+  <text x="40" y="940" font-family="system-ui, sans-serif" font-size="14" font-weight="bold" fill="#374151">Key Concepts:</text>
+  <text x="140" y="940" font-family="system-ui, sans-serif" font-size="14" fill="#374151">single submit path | consent-gated events | append-only log | realtime fanout</text>
+
+  <!-- SIGNATURE -->
+  <text x="40" y="1060" fill="#374151" font-family="system-ui, sans-serif" font-size="18" font-weight="bold">049:06 | Capture Data Flow | eightysix</text>
+</svg>
