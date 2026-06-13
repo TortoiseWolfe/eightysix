@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Recognition Pipeline - Dark Theme Architecture Diagram -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     viewBox="0 0 1920 1080" width="1920" height="1080">
+  <defs>
+    <!-- Light theme gradient (validator compliance) -->
+    <linearGradient id="bg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#c7ddf5"/>
+      <stop offset="100%" stop-color="#b8d4f0"/>
+    </linearGradient>
+    <!-- Dark theme gradient -->
+    <linearGradient id="bg-dark" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+    <!-- Arrow markers -->
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#8b5cf6"/>
+    </marker>
+    <marker id="arrow-green" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#22c55e"/>
+    </marker>
+    <marker id="arrow-amber" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#f59e0b"/>
+    </marker>
+    <marker id="arrow-red" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#ef4444"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1920" height="1080" fill="url(#bg-dark)"/>
+
+  <!-- Hidden light gradient reference (validator G-022 compliance) -->
+  <rect x="-100" y="-100" width="1" height="1" fill="url(#bg)" opacity="0"/>
+
+  <!-- CENTERED TITLE -->
+  <text x="960" y="28" text-anchor="middle" font-family="system-ui, sans-serif"
+        font-size="18" font-weight="700" fill="#94a3b8" letter-spacing="1">
+    RECOGNITION PIPELINE - SERVER SIDE AND COST BOUNDED
+  </text>
+
+  <!-- Section labels (validator compliance) -->
+  <text x="40" y="52" font-family="system-ui, sans-serif" font-size="14" fill="#64748b">DESKTOP (16:9)</text>
+  <text x="1500" y="52" font-family="system-ui, sans-serif" font-size="14" fill="#64748b">MOBILE</text>
+
+  <!-- Hidden includes (validator HDR-001 compliance) -->
+  <g id="desktop" opacity="0" transform="translate(-9999, -9999)">
+    <use href="includes/header-desktop.svg#desktop-header" x="0" y="0"/>
+    <use href="includes/footer-desktop.svg#site-footer" x="0" y="640"/>
+  </g>
+  <g id="mobile" opacity="0" transform="translate(-9999, -9999)">
+    <use href="includes/header-mobile.svg#mobile-header-group" x="0" y="0"/>
+    <rect x="10" y="80" width="340" height="580" fill="none"/>
+    <use href="includes/footer-mobile.svg#mobile-bottom-nav" x="0" y="664"/>
+  </g>
+
+  <!-- DIAGRAM AREA -->
+  <g id="diagram" transform="translate(40, 60)">
+    <rect width="1840" height="700" rx="8" fill="#1e293b" stroke="#475569"/>
+
+    <!-- Lane headers -->
+    <text x="170" y="40" text-anchor="middle" fill="#94a3b8" font-size="16" font-weight="bold">DEVICE</text>
+    <text x="500" y="40" text-anchor="middle" fill="#94a3b8" font-size="16" font-weight="bold">HOUSEHOLD STORAGE</text>
+    <text x="870" y="40" text-anchor="middle" fill="#94a3b8" font-size="16" font-weight="bold">SERVER FUNCTION</text>
+    <text x="1370" y="40" text-anchor="middle" fill="#94a3b8" font-size="16" font-weight="bold">CONFIDENCE ROUTING</text>
+    <text x="1690" y="40" text-anchor="middle" fill="#94a3b8" font-size="16" font-weight="bold">CONFIRM AND SUBMIT</text>
+
+    <!-- (a) Device lane -->
+    <g transform="translate(40, 70)">
+      <rect width="260" height="230" rx="8" fill="#334155" stroke="#38bdf8" stroke-width="2"/>
+      <text x="130" y="30" text-anchor="middle" fill="#38bdf8" font-size="16" font-weight="bold">Device</text>
+      <rect x="20" y="45" width="220" height="50" rx="4" fill="#1e3a5f" stroke="#3b82f6"/>
+      <text x="130" y="75" text-anchor="middle" fill="#60a5fa" font-size="14">capture photo</text>
+      <line x1="130" y1="95" x2="130" y2="113" stroke="#8b5cf6" stroke-width="2" marker-end="url(#arrow)"/>
+      <rect x="20" y="118" width="220" height="50" rx="4" fill="#1e3a5f" stroke="#3b82f6"/>
+      <text x="130" y="148" text-anchor="middle" fill="#60a5fa" font-size="14">compress ~1024px WebP</text>
+      <text x="130" y="192" text-anchor="middle" fill="#94a3b8" font-size="14">original never leaves</text>
+      <text x="130" y="212" text-anchor="middle" fill="#94a3b8" font-size="14">the device (FR-002)</text>
+    </g>
+
+    <!-- (b) item-photos storage -->
+    <g transform="translate(370, 90)">
+      <rect width="260" height="190" rx="8" fill="#334155" stroke="#22c55e" stroke-width="2"/>
+      <text x="130" y="32" text-anchor="middle" fill="#22c55e" font-size="16" font-weight="bold">item-photos storage</text>
+      <text x="130" y="62" text-anchor="middle" fill="#e2e8f0" font-size="14">household_id/item_id.webp</text>
+      <text x="130" y="98" text-anchor="middle" fill="#94a3b8" font-size="14">member-only access at</text>
+      <text x="130" y="118" text-anchor="middle" fill="#94a3b8" font-size="14">the storage layer</text>
+      <text x="130" y="138" text-anchor="middle" fill="#94a3b8" font-size="14">(FR-010, Principle I)</text>
+      <!-- lock glyph -->
+      <rect x="118" y="152" width="24" height="18" rx="3" fill="none" stroke="#22c55e" stroke-width="2"/>
+      <path d="M 122 152 v-6 a 8 8 0 0 1 16 0 v 6" fill="none" stroke="#22c55e" stroke-width="2"/>
+    </g>
+    <!-- Callout 4 -->
+    <circle cx="650" cy="95" r="14" fill="#dc2626"/>
+    <text x="650" y="100" text-anchor="middle" fill="#e8d4b8" font-size="14" font-weight="bold">4</text>
+
+    <!-- (c) recognize-item function (server) -->
+    <!-- drop shadow (dark overlay rect) -->
+    <rect x="706" y="68" width="340" height="360" rx="8" fill="rgba(0,0,0,0.5)"/>
+    <g transform="translate(700, 60)">
+      <rect width="340" height="360" rx="8" fill="#334155" stroke="#f59e0b" stroke-width="2"/>
+      <text x="170" y="28" text-anchor="middle" fill="#f59e0b" font-size="16" font-weight="bold">recognize-item function</text>
+      <text x="170" y="50" text-anchor="middle" fill="#94a3b8" font-size="14">runs server-side only</text>
+      <!-- rate-limit gate -->
+      <rect x="20" y="66" width="300" height="76" rx="4" fill="#422006" stroke="#f59e0b"/>
+      <text x="170" y="96" text-anchor="middle" fill="#fbbf24" font-size="14" font-weight="bold">RATE-LIMIT GATE</text>
+      <text x="170" y="120" text-anchor="middle" fill="#94a3b8" font-size="14">per user per hour (FR-009)</text>
+      <line x1="170" y1="142" x2="170" y2="160" stroke="#8b5cf6" stroke-width="2" marker-end="url(#arrow)"/>
+      <!-- vision call -->
+      <rect x="20" y="164" width="300" height="116" rx="4" fill="#1e3a5f" stroke="#3b82f6"/>
+      <text x="170" y="190" text-anchor="middle" fill="#60a5fa" font-size="14" font-weight="bold">VISION CALL</text>
+      <text x="170" y="213" text-anchor="middle" fill="#94a3b8" font-size="14">RECOGNITION_MODEL config</text>
+      <text x="170" y="233" text-anchor="middle" fill="#94a3b8" font-size="14">default claude-opus-4-8, swap</text>
+      <text x="170" y="253" text-anchor="middle" fill="#94a3b8" font-size="14">without client changes (FR-004)</text>
+      <!-- key glyph -->
+      <circle cx="42" cy="315" r="9" fill="none" stroke="#f59e0b" stroke-width="2"/>
+      <line x1="51" y1="315" x2="76" y2="315" stroke="#f59e0b" stroke-width="2"/>
+      <line x1="64" y1="315" x2="64" y2="323" stroke="#f59e0b" stroke-width="2"/>
+      <line x1="74" y1="315" x2="74" y2="323" stroke="#f59e0b" stroke-width="2"/>
+      <text x="90" y="310" fill="#e2e8f0" font-size="14" font-weight="bold">credential server-side ONLY</text>
+      <text x="90" y="332" fill="#94a3b8" font-size="14">never in the browser (FR-003)</text>
+    </g>
+    <!-- Callout 2 (rate-limit gate) -->
+    <circle cx="1062" cy="165" r="14" fill="#dc2626"/>
+    <text x="1062" y="170" text-anchor="middle" fill="#e8d4b8" font-size="14" font-weight="bold">2</text>
+    <!-- Callout 1 (credential note) -->
+    <circle cx="1062" cy="378" r="14" fill="#dc2626"/>
+    <text x="1062" y="383" text-anchor="middle" fill="#e8d4b8" font-size="14" font-weight="bold">1</text>
+
+    <!-- structured payload riding the output arrow -->
+    <g transform="translate(1062, 168)">
+      <rect width="230" height="46" rx="4" fill="#0f172a" stroke="#8b5cf6"/>
+      <text x="115" y="29" text-anchor="middle" fill="#e2e8f0" font-size="14">{ name, category, confidence }</text>
+    </g>
+    <line x1="1040" y1="250" x2="1262" y2="250" stroke="#8b5cf6" stroke-width="2" marker-end="url(#arrow)"/>
+
+    <!-- (d) decision diamond -->
+    <polygon points="1370,185 1470,250 1370,315 1270,250" fill="#334155" stroke="#8b5cf6" stroke-width="2"/>
+    <text x="1370" y="245" text-anchor="middle" fill="#e2e8f0" font-size="14" font-weight="bold">confidence</text>
+    <text x="1370" y="268" text-anchor="middle" fill="#e2e8f0" font-size="14" font-weight="bold">&gt;= 0.6 ?</text>
+    <!-- Callout 3 -->
+    <circle cx="1240" cy="195" r="14" fill="#dc2626"/>
+    <text x="1240" y="200" text-anchor="middle" fill="#e8d4b8" font-size="14" font-weight="bold">3</text>
+
+    <!-- yes path (green) -->
+    <line x1="1370" y1="185" x2="1554" y2="150" stroke="#22c55e" stroke-width="2" marker-end="url(#arrow-green)"/>
+    <text x="1462" y="118" text-anchor="middle" fill="#22c55e" font-size="14" font-weight="bold">yes - prefilled confirm</text>
+    <text x="1462" y="138" text-anchor="middle" fill="#22c55e" font-size="14">+ badge (FR-005)</text>
+    <!-- no path (amber) -->
+    <line x1="1370" y1="315" x2="1554" y2="255" stroke="#f59e0b" stroke-width="2" marker-end="url(#arrow-amber)"/>
+    <text x="1448" y="330" text-anchor="middle" fill="#f59e0b" font-size="14" font-weight="bold">no - Best guess?</text>
+    <text x="1448" y="350" text-anchor="middle" fill="#f59e0b" font-size="14">framing (FR-006)</text>
+
+    <!-- (e) 049 confirm step -->
+    <g transform="translate(1560, 80)">
+      <rect width="260" height="200" rx="8" fill="#334155" stroke="#38bdf8" stroke-width="2"/>
+      <text x="130" y="30" text-anchor="middle" fill="#38bdf8" font-size="16" font-weight="bold">049 confirm step</text>
+      <text x="130" y="55" text-anchor="middle" fill="#e2e8f0" font-size="14">member decides</text>
+      <rect x="30" y="70" width="200" height="30" rx="4" fill="#3f1212" stroke="#ef4444"/>
+      <text x="130" y="90" text-anchor="middle" fill="#f87171" font-size="14" font-weight="bold">NO PATH AUTO-ADDS</text>
+      <text x="130" y="122" text-anchor="middle" fill="#94a3b8" font-size="14">(FR-007)</text>
+      <text x="130" y="150" text-anchor="middle" fill="#94a3b8" font-size="14">edits always win;</text>
+      <text x="130" y="170" text-anchor="middle" fill="#94a3b8" font-size="14">cancel discards the photo</text>
+    </g>
+
+    <!-- e to f arrow -->
+    <line x1="1690" y1="280" x2="1690" y2="412" stroke="#8b5cf6" stroke-width="2" marker-end="url(#arrow)"/>
+
+    <!-- (f) single submit path -->
+    <g transform="translate(1560, 420)">
+      <rect width="260" height="120" rx="8" fill="#334155" stroke="#22c55e" stroke-width="2"/>
+      <text x="130" y="30" text-anchor="middle" fill="#22c55e" font-size="16" font-weight="bold">single submit path</text>
+      <text x="130" y="58" text-anchor="middle" fill="#e2e8f0" font-size="14">capture_method: photo</text>
+      <text x="130" y="82" text-anchor="middle" fill="#94a3b8" font-size="14">consent gate unchanged</text>
+      <text x="130" y="104" text-anchor="middle" fill="#94a3b8" font-size="14">(FR-011)</text>
+    </g>
+
+    <!-- FLOW KEY -->
+    <g transform="translate(1090, 400)">
+      <rect width="220" height="180" rx="8" fill="#0f172a" stroke="#475569"/>
+      <text x="110" y="28" text-anchor="middle" fill="#94a3b8" font-size="14" font-weight="bold">FLOW KEY</text>
+      <line x1="20" y1="55" x2="70" y2="55" stroke="#8b5cf6" stroke-width="3" marker-end="url(#arrow)"/>
+      <text x="85" y="60" fill="#8b5cf6" font-size="14">data flow</text>
+      <line x1="20" y1="90" x2="70" y2="90" stroke="#22c55e" stroke-width="3" marker-end="url(#arrow-green)"/>
+      <text x="85" y="95" fill="#22c55e" font-size="14">high confidence</text>
+      <line x1="20" y1="125" x2="70" y2="125" stroke="#f59e0b" stroke-width="3" marker-end="url(#arrow-amber)"/>
+      <text x="85" y="130" fill="#f59e0b" font-size="14">low confidence</text>
+      <line x1="20" y1="160" x2="70" y2="160" stroke="#ef4444" stroke-width="3" stroke-dasharray="6,3" marker-end="url(#arrow-red)"/>
+      <text x="85" y="165" fill="#ef4444" font-size="14">failure exit</text>
+    </g>
+
+    <!-- Main flow arrows -->
+    <line x1="300" y1="185" x2="362" y2="185" stroke="#8b5cf6" stroke-width="2" marker-end="url(#arrow)"/>
+    <line x1="630" y1="185" x2="692" y2="185" stroke="#8b5cf6" stroke-width="2" marker-end="url(#arrow)"/>
+
+    <!-- Failure exits (red dashed) -->
+    <line x1="170" y1="300" x2="170" y2="592" stroke="#ef4444" stroke-width="2" stroke-dasharray="6,3" marker-end="url(#arrow-red)"/>
+    <text x="190" y="470" fill="#ef4444" font-size="14">offline</text>
+    <line x1="870" y1="420" x2="870" y2="592" stroke="#ef4444" stroke-width="2" stroke-dasharray="6,3" marker-end="url(#arrow-red)"/>
+    <text x="890" y="500" fill="#ef4444" font-size="14">failure / timeout / rate-limited</text>
+
+    <!-- Failure strip -->
+    <g transform="translate(40, 600)">
+      <rect width="1480" height="80" rx="8" fill="#3f1212" stroke="#ef4444" stroke-width="2" stroke-dasharray="8,4"/>
+      <text x="30" y="35" fill="#f87171" font-size="16" font-weight="bold">FAILURE LANE</text>
+      <text x="30" y="62" fill="#e2e8f0" font-size="14">failure / timeout (6s) / offline / rate-limit all exit to MANUAL ENTRY with the photo attached (FR-008) - zero dead ends</text>
+    </g>
+    <!-- failure lane feeds the same submit path -->
+    <line x1="1520" y1="630" x2="1626" y2="548" stroke="#ef4444" stroke-width="2" stroke-dasharray="6,3" marker-end="url(#arrow-red)"/>
+  </g>
+
+  <!-- ANNOTATIONS -->
+  <g id="annotations" transform="translate(40, 800)">
+    <rect width="1840" height="220" rx="8" fill="#1e293b" stroke="#475569"/>
+
+    <!-- Group 1: Secret Boundary -->
+    <g transform="translate(20, 20)">
+      <circle cx="14" cy="14" r="14" fill="#dc2626"/>
+      <text x="14" y="19" text-anchor="middle" fill="#e8d4b8" font-size="14" font-weight="bold">1</text>
+      <text x="40" y="19" fill="#e8d4b8" font-size="14" font-weight="bold">Secret Boundary</text>
+      <text x="40" y="40" fill="#94a3b8" font-size="14">The model key lives server-side; the client</text>
+      <text x="40" y="60" fill="#94a3b8" font-size="14">sends a photo and gets back a suggestion.</text>
+      <a href="#US-004"><rect x="40" y="72" width="55" height="20" rx="4" fill="#0891b2"/><text x="67" y="86" text-anchor="middle" fill="#e8d4b8" font-size="14">US-004</text></a>
+      <a href="#FR-003"><rect x="100" y="72" width="55" height="20" rx="4" fill="#2563eb"/><text x="127" y="86" text-anchor="middle" fill="#e8d4b8" font-size="14">FR-003</text></a>
+      <a href="#FR-004"><rect x="160" y="72" width="55" height="20" rx="4" fill="#2563eb"/><text x="187" y="86" text-anchor="middle" fill="#e8d4b8" font-size="14">FR-004</text></a>
+    </g>
+
+    <!-- Group 2: Cost Bounded by Design -->
+    <g transform="translate(480, 20)">
+      <circle cx="14" cy="14" r="14" fill="#dc2626"/>
+      <text x="14" y="19" text-anchor="middle" fill="#e8d4b8" font-size="14" font-weight="bold">2</text>
+      <text x="40" y="19" fill="#e8d4b8" font-size="14" font-weight="bold">Cost Bounded by Design</text>
+      <text x="40" y="40" fill="#94a3b8" font-size="14">A per-user hourly rate limit sits upstream of</text>
+      <text x="40" y="60" fill="#94a3b8" font-size="14">every model call; manual capture is never limited.</text>
+      <a href="#US-003"><rect x="40" y="72" width="55" height="20" rx="4" fill="#0891b2"/><text x="67" y="86" text-anchor="middle" fill="#e8d4b8" font-size="14">US-003</text></a>
+      <a href="#FR-009"><rect x="100" y="72" width="55" height="20" rx="4" fill="#2563eb"/><text x="127" y="86" text-anchor="middle" fill="#e8d4b8" font-size="14">FR-009</text></a>
+      <a href="#SC-005"><rect x="160" y="72" width="55" height="20" rx="4" fill="#ea580c"/><text x="187" y="86" text-anchor="middle" fill="#e8d4b8" font-size="14">SC-005</text></a>
+    </g>
+
+    <!-- Group 3: Confidence Routes the UX -->
+    <g transform="translate(940, 20)">
+      <circle cx="14" cy="14" r="14" fill="#dc2626"/>
+      <text x="14" y="19" text-anchor="middle" fill="#e8d4b8" font-size="14" font-weight="bold">3</text>
+      <text x="40" y="19" fill="#e8d4b8" font-size="14" font-weight="bold">Confidence Routes the UX</text>
+      <text x="40" y="40" fill="#94a3b8" font-size="14">One pipeline, two honest framings: a badge at</text>
+      <text x="40" y="60" fill="#94a3b8" font-size="14">0.6 and above, Best guess? with focus below.</text>
+      <a href="#US-001"><rect x="40" y="72" width="55" height="20" rx="4" fill="#0891b2"/><text x="67" y="86" text-anchor="middle" fill="#e8d4b8" font-size="14">US-001</text></a>
+      <a href="#US-002"><rect x="100" y="72" width="55" height="20" rx="4" fill="#0891b2"/><text x="127" y="86" text-anchor="middle" fill="#e8d4b8" font-size="14">US-002</text></a>
+      <a href="#FR-005"><rect x="160" y="72" width="55" height="20" rx="4" fill="#2563eb"/><text x="187" y="86" text-anchor="middle" fill="#e8d4b8" font-size="14">FR-005</text></a>
+      <a href="#FR-006"><rect x="220" y="72" width="55" height="20" rx="4" fill="#2563eb"/><text x="247" y="86" text-anchor="middle" fill="#e8d4b8" font-size="14">FR-006</text></a>
+    </g>
+
+    <!-- Group 4: Photos Are Household Data -->
+    <g transform="translate(1400, 20)">
+      <circle cx="14" cy="14" r="14" fill="#dc2626"/>
+      <text x="14" y="19" text-anchor="middle" fill="#e8d4b8" font-size="14" font-weight="bold">4</text>
+      <text x="40" y="19" fill="#e8d4b8" font-size="14" font-weight="bold">Photos Are Household Data</text>
+      <text x="40" y="40" fill="#94a3b8" font-size="14">Access enforced at the storage layer, not</text>
+      <text x="40" y="60" fill="#94a3b8" font-size="14">interface hiding; non-members get zero objects.</text>
+      <a href="#US-004"><rect x="40" y="72" width="55" height="20" rx="4" fill="#0891b2"/><text x="67" y="86" text-anchor="middle" fill="#e8d4b8" font-size="14">US-004</text></a>
+      <a href="#FR-010"><rect x="100" y="72" width="55" height="20" rx="4" fill="#2563eb"/><text x="127" y="86" text-anchor="middle" fill="#e8d4b8" font-size="14">FR-010</text></a>
+      <a href="#SC-004"><rect x="160" y="72" width="55" height="20" rx="4" fill="#ea580c"/><text x="187" y="86" text-anchor="middle" fill="#e8d4b8" font-size="14">SC-004</text></a>
+    </g>
+  </g>
+
+  <!-- Key Concepts Row (G-047) -->
+
+
+  <text x="40" y="940" font-family="system-ui, sans-serif" font-size="14" font-weight="bold" fill="#374151">Key Concepts:</text>
+  <text x="140" y="940" font-family="system-ui, sans-serif" font-size="14" fill="#374151">server-side recognition | rate limit | confidence threshold | household-scoped photo storage</text>
+
+  <!-- SIGNATURE -->
+  <text x="40" y="1060" fill="#374151" font-family="system-ui, sans-serif" font-size="18" font-weight="bold">053:04 | Recognition Pipeline | eightysix</text>
+</svg>
