@@ -20,7 +20,6 @@ import {
   JsonLdScript,
 } from '@/utils/metadata';
 import PWAInstall from '@/components/PWAInstall';
-import { CountdownBanner } from '@/components/atomic/CountdownBanner';
 import { SetupBanner } from '@/components/SetupBanner';
 import A11yDevOverlay from '@/components/organisms/A11yDevOverlay';
 
@@ -132,7 +131,6 @@ export default function RootLayout({
           <AuthProvider>
             <AccessibilityProvider>
               <GlobalNav />
-              <CountdownBanner />
               <SetupBanner />
               <ErrorBoundary level="page">
                 <div className="bg-base-200 min-h-0 flex-1 overflow-hidden pb-14">
