@@ -430,7 +430,6 @@ export const DEFAULT_TEST_PASSWORD = 'TestPassword123!';
  *
  * Dismisses:
  * - Cookie consent banner ("Accept All" button)
- * - Promotional countdown banner ("Dismiss countdown banner" button)
  *
  * @param page - Playwright page object
  * @param options - Configuration options
@@ -475,19 +474,6 @@ export async function dismissCookieBanner(
         },
         { timeout: 3000 }
       );
-    }
-  } catch {
-    // Banner not present or already dismissed - continue silently
-  }
-
-  // Dismiss promotional countdown banner using force click
-  try {
-    const countdownDismiss = page.getByRole('button', {
-      name: /dismiss countdown banner/i,
-    });
-    if (await countdownDismiss.isVisible({ timeout }).catch(() => false)) {
-      await countdownDismiss.click({ force: true });
-      await page.waitForTimeout(500);
     }
   } catch {
     // Banner not present or already dismissed - continue silently
